@@ -12,6 +12,8 @@
   <meta property="og:image" content="https://ohana-pickleball.vercel.app/img/court-ohana.jpg">
   <meta property="og:url" content="https://ohana-pickleball.vercel.app/">
   <meta name="theme-color" content="#173A6C">
+  <link rel="icon" type="image/png" href="img/logo-mark.png">
+  <link rel="apple-touch-icon" href="img/logo-mark.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,10 +92,9 @@
     /* ════════════════════ NAV ════════════════════ */
     .nav { position: sticky; top: 0; z-index: 100; background: rgba(23,58,108,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.12); }
     .nav-in { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(18px,4vw,40px); display: flex; align-items: center; justify-content: space-between; min-height: 72px; }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand-badge { width: 44px; height: 44px; flex-shrink: 0; }
-    .brand-txt { font-family: var(--f-disp); font-weight: 900; font-size: 19px; color: var(--white); line-height: 0.95; letter-spacing: 0.02em; text-transform: uppercase; }
-    .brand-txt em { display: block; font-style: normal; font-family: var(--f-mono); font-weight: 400; font-size: 8.5px; color: var(--sun); letter-spacing: 0.24em; margin-top: 3px; }
+    .brand { display: flex; align-items: center; text-decoration: none; }
+    /* logo PNG ships on a white background → present it as a deliberate white chip */
+    .brand-logo { height: 54px; width: auto; display: block; background: #fff; border-radius: 10px; padding: 5px 11px; box-shadow: 0 2px 10px rgba(0,0,0,0.18); }
     .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
     .nav-links a { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-navy-soft); text-decoration: none; padding: 10px 12px; border-radius: 7px; transition: color 0.15s, background 0.15s; }
     .nav-links a:hover, .nav-links a.active { color: var(--white); }
@@ -323,14 +324,8 @@
 <header>
   <nav class="nav" aria-label="Main">
     <div class="nav-in">
-      <a href="#top" class="brand" aria-label="OHANA Pickleball Club — home">
-        <svg class="brand-badge" viewBox="0 0 44 44" fill="none" aria-hidden="true">
-          <rect x="1.5" y="1.5" width="41" height="41" rx="10" fill="#173A6C" stroke="#29A9E1" stroke-width="2"/>
-          <text x="22" y="19" font-family="Archivo, sans-serif" font-weight="900" font-size="11" fill="#fff" text-anchor="middle" letter-spacing="0.5">OHANA</text>
-          <path d="M22 22c-1.6-1.6-3.6-1.9-3.6-1.9s.6 2 2.2 3.2M22 22c1.6-1.6 3.6-1.9 3.6-1.9s-.6 2-2.2 3.2M22 22v6" stroke="#29A9E1" stroke-width="1.2" stroke-linecap="round"/>
-          <text x="22" y="36" font-family="Archivo, sans-serif" font-weight="700" font-size="4.4" fill="#29A9E1" text-anchor="middle" letter-spacing="0.6">PICKLEBALL CLUB</text>
-        </svg>
-        <span class="brand-txt">OHANA<em>Pickleball · Maui</em></span>
+      <a href="#top" class="brand" aria-label="OHANA Pickleball Club — Maui, home">
+        <img class="brand-logo" src="img/logo.png" width="457" height="217" alt="OHANA Pickleball Club — Maui">
       </a>
       <ul class="nav-links">
         <li><a href="#courts">Courts</a></li>
