@@ -4,369 +4,315 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OHANA Pickleball Club – Maui | Play With Aloha</title>
-  <meta name="description" content="Twelve covered pro courts inside Kaʻanapali Beach Resort. Maui's home court — open to the island and its guests every day. Day passes, memberships, coaching, private events.">
+  <meta name="description" content="Maui's home court — twelve covered pro courts inside Hyatt Regency Maui at Kaʻanapali. Court rentals, coaching, learn-to-play and private events. Open daily, drop-ins welcome.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OHANA Pickleball Club – Maui | Twelve courts. One ohana.">
-  <meta property="og:description" content="Maui's home court — twelve covered courts at Kaʻanapali Beach Resort. Open daily. Drop-ins welcome.">
-  <!-- ▶ og:image PLACEHOLDER: hosted 1200×630 JPG — top-down or floodlit night shot of the
-       courts, gold light on the surface, Maui mountains behind. ◀ -->
-  <meta property="og:image" content="https://ohanapbc.com/og/ohana-courts-1200x630.jpg">
-  <meta property="og:url" content="https://ohanapbc.com/">
-  <meta name="theme-color" content="#0A1B33">
+  <meta property="og:title" content="OHANA Pickleball Club – Maui | Play With Aloha">
+  <meta property="og:description" content="Twelve covered courts at Hyatt Regency Maui, Kaʻanapali. Rentals, coaching, events. Open daily.">
+  <!-- ▶ og:image: point at a hosted 1200×630 of the courts (e.g. img/court-ohana.jpg uploaded to your domain). ◀ -->
+  <meta property="og:image" content="https://ohana-pickleball.vercel.app/img/court-ohana.jpg">
+  <meta property="og:url" content="https://ohana-pickleball.vercel.app/">
+  <meta name="theme-color" content="#173A6C">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500;1,9..144,900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     /* ════════════════════════════════════════════════════════════════
-       FLOODLIT COURT — concept: an architect's poster of a pickleball
-       court. Editorial serif claims + cold mono court-measurements over
-       a deep floodlit-navy field. The court-line system is the grammar.
+       OHANA PICKLEBALL — brand build. Energetic beach-sport identity
+       pulled from the real logo, banners and signage.
 
-       5 NAMED COLORS — everything else is an alpha/shade of these.
-         background  bone   #F3EDE2
-         surface     paper  #FFFFFF
-         primary     court  #0A1B33
-         accent      gold   #F2C234
-         text        ink    #141A24
-       CONTRAST (AA ≥ 4.5:1): gold carries text ONLY on navy (≈ 9:1).
-       On light surfaces, labels are navy/ink. Verified in-browser.
+       5 NAMED COLORS (rest are shades/alphas of these):
+         primary    navy        #173A6C   (dark sections, headings, ink)
+         secondary  court-blue  #29A9E1   (court fills, accents, decoration)
+         accent     sun-yellow  #FFC629   (CTAs, key highlights)
+         surface    white       #FFFFFF
+         background  mist        #EAF1F8
+       CONTRAST (AA ≥ 4.5:1): sun-yellow & court-blue are LIGHT — they
+       carry text only on navy, never on white. On light surfaces text is
+       navy/ink. Verified in-browser.
     ════════════════════════════════════════════════════════════════ */
     :root {
-      --bone:  #F3EDE2;
-      --paper: #FFFFFF;
-      --court: #0A1B33;
-      --gold:  #F2C234;
-      --ink:   #141A24;
+      --navy:   #173A6C;
+      --court:  #29A9E1;
+      --sun:    #FFC629;
+      --white:  #FFFFFF;
+      --mist:   #EAF1F8;
 
-      --muted:        #4B5563;                    /* ink shade, ≥4.5:1 on bone */
-      --court-2:      #06122A;                    /* deepest navy */
-      --line-bone:    #DED5C5;                     /* hairline on light */
-      --on-court:     rgba(255,255,255,0.90);
-      --on-court-soft:rgba(255,255,255,0.58);
-      --on-court-faint:rgba(255,255,255,0.55);   /* ≥4.5:1 on navy — legible for labels/fine print */
-      --net-line:     rgba(255,255,255,0.14);
+      --ink:    #112A4F;                       /* deepest navy — body text on light */
+      --muted:  #45566F;                       /* navy-gray, ≥4.5:1 on white/mist */
+      --navy-2: #0F2A52;                        /* darker band */
+      --line:   #D7E1EC;                        /* hairline on light */
+      --on-navy:       rgba(255,255,255,0.92);
+      --on-navy-soft:  rgba(255,255,255,0.66);
+      --on-navy-dim:   rgba(255,255,255,0.50);
+      --line-navy:     rgba(255,255,255,0.14);
 
-      --f-disp: 'Fraunces', Georgia, serif;
+      --f-disp: 'Archivo', system-ui, sans-serif;
       --f-body: 'DM Sans', system-ui, sans-serif;
       --f-mono: 'DM Mono', ui-monospace, monospace;
 
-      --fs-hero: clamp(3.6rem, 11.5vw, 11.5rem);
-      --fs-h2:   clamp(2.1rem, 5.2vw, 4.25rem);
-      --fs-h3:   clamp(1.3rem, 2vw, 1.7rem);
+      --fs-hero: clamp(2.9rem, 8.5vw, 7.5rem);
+      --fs-h2:   clamp(1.9rem, 4.6vw, 3.6rem);
+      --fs-h3:   clamp(1.2rem, 2vw, 1.5rem);
       --fs-body: 1.0625rem;
       --fs-mono: 0.6875rem;
 
-      --pad: clamp(80px, 11vw, 168px);
+      --pad: clamp(72px, 9vw, 144px);
       --maxw: 1280px;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --r: 16px;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
       font-family: var(--f-body); font-size: var(--fs-body);
-      color: var(--ink); background: var(--bone); line-height: 1.55;
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-      overflow-x: hidden;
+      color: var(--ink); background: var(--white); line-height: 1.55;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden;
     }
     img, svg { display: block; max-width: 100%; }
     a { color: inherit; }
-    ::selection { background: var(--gold); color: var(--court); }
+    ::selection { background: var(--sun); color: var(--navy); }
 
-    /* Printed-poster grain over everything — atmosphere, not noise. */
-    body::after {
-      content: ''; position: fixed; inset: 0; z-index: 9998; pointer-events: none;
-      opacity: 0.045; mix-blend-mode: multiply;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
+    .eyebrow { font-family: var(--f-mono); font-size: var(--fs-mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--court); display: inline-block; margin-bottom: 14px; }
+    .on-navy .eyebrow { color: var(--sun); }
+    .light .eyebrow { color: #155F88; }       /* court-blue darkened for AA on light (~6:1) */
+    .h2 { font-family: var(--f-disp); font-weight: 900; font-size: var(--fs-h2); line-height: 0.98; letter-spacing: -0.02em; color: var(--navy); text-transform: uppercase; }
+    .on-navy .h2 { color: var(--white); }
+    .lead { font-size: 1.12rem; line-height: 1.7; color: var(--muted); max-width: 50ch; }
+    .on-navy .lead { color: var(--on-navy-soft); }
 
-    /* ─── Mono "spec line" — the recurring motif ─────────────────── */
-    .spec {
-      font-family: var(--f-mono); font-size: var(--fs-mono);
-      letter-spacing: 0.16em; text-transform: uppercase;
-      display: inline-flex; align-items: center; gap: 12px; color: var(--court);
-    }
-    .spec::before { content: ''; width: 28px; height: 1px; background: currentColor; opacity: 0.55; }
-    .on-court .spec, .spec.gold { color: var(--gold); }
-
-    .h2 {
-      font-family: var(--f-disp); font-weight: 900;
-      font-size: var(--fs-h2); line-height: 0.98; letter-spacing: -0.015em;
-      color: var(--court); font-optical-sizing: auto;
-    }
-    .on-court .h2 { color: var(--paper); }
-    .lead { font-size: 1.12rem; line-height: 1.72; color: var(--muted); max-width: 48ch; }
-    .on-court .lead { color: var(--on-court-soft); }
-
-    .skip-nav {
-      position: absolute; top: -120%; left: 16px; z-index: 9999;
-      background: var(--gold); color: var(--court);
-      padding: 12px 20px; border-radius: 0 0 10px 10px;
-      font-weight: 700; font-size: 14px; text-decoration: none; transition: top 0.12s;
-    }
+    .skip-nav { position: absolute; top: -120%; left: 16px; z-index: 9999; background: var(--sun); color: var(--navy); padding: 12px 20px; border-radius: 0 0 10px 10px; font-weight: 800; font-size: 14px; text-decoration: none; transition: top 0.12s; }
     .skip-nav:focus { top: 0; }
-    :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+    :focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 5px; }
 
     /* ════════════════════ NAV ════════════════════ */
-    .nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(10,27,51,0.82); backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.10);
-    }
-    .nav-in { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px,4vw,40px);
-      display: flex; align-items: center; justify-content: space-between; min-height: 70px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(23,58,108,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .nav-in { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(18px,4vw,40px); display: flex; align-items: center; justify-content: space-between; min-height: 72px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand-badge { width: 40px; height: 40px; flex-shrink: 0; }
-    .brand-name { font-family: var(--f-disp); font-weight: 900; font-size: 18px; color: var(--paper); line-height: 1; letter-spacing: 0.01em; }
-    .brand-name em { display: block; font-style: normal; font-family: var(--f-mono); font-weight: 400; font-size: 8.5px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-top: 4px; }
-    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
-    .nav-links a { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-court-soft); text-decoration: none; padding: 10px 12px; border-radius: 6px; transition: color 0.15s, background 0.15s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--paper); }
-    .nav-cta { color: var(--court) !important; background: var(--gold); border-radius: 100px; padding: 9px 20px !important; font-weight: 500; margin-left: 6px; transition: filter 0.15s, transform 0.15s; }
-    .nav-cta:hover { filter: brightness(1.07); transform: translateY(-1px); }
+    .brand-badge { width: 44px; height: 44px; flex-shrink: 0; }
+    .brand-txt { font-family: var(--f-disp); font-weight: 900; font-size: 19px; color: var(--white); line-height: 0.95; letter-spacing: 0.02em; text-transform: uppercase; }
+    .brand-txt em { display: block; font-style: normal; font-family: var(--f-mono); font-weight: 400; font-size: 8.5px; color: var(--sun); letter-spacing: 0.24em; margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-links a { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-navy-soft); text-decoration: none; padding: 10px 12px; border-radius: 7px; transition: color 0.15s, background 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta { background: var(--sun); color: var(--navy) !important; font-weight: 800; border-radius: 100px; padding: 10px 22px !important; margin-left: 8px; transition: filter 0.15s, transform 0.15s; }
+    .nav-cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
     .burger { display: none; width: 44px; height: 44px; background: none; border: none; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
-    .burger span { display: block; width: 24px; height: 2px; background: var(--paper); border-radius: 2px; transition: transform 0.25s var(--ease), opacity 0.2s; }
-    .burger[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-    .burger[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
-    .burger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
-    .drawer { display: none; background: var(--court); border-top: 1px solid rgba(255,255,255,0.08); padding: 8px clamp(20px,4vw,40px) 22px; }
+    .burger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.25s var(--ease), opacity 0.2s; }
+    .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .drawer { display: none; background: var(--navy); border-top: 1px solid rgba(255,255,255,0.10); padding: 8px clamp(18px,4vw,40px) 22px; }
     .drawer ul { list-style: none; }
-    .drawer a { display: flex; align-items: center; min-height: 50px; font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-court); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .drawer a.dr-cta { margin-top: 14px; min-height: 54px; justify-content: center; background: var(--gold); color: var(--court); border: none; border-radius: 100px; }
+    .drawer a { display: flex; align-items: center; min-height: 50px; font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--on-navy); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .drawer a.dr-cta { margin-top: 14px; min-height: 54px; justify-content: center; background: var(--sun); color: var(--navy); border: none; border-radius: 100px; font-weight: 800; }
 
     /* ════════════════════ BUTTONS ════════════════════ */
-    .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 15px 30px; border-radius: 100px;
-      font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none;
-      transition: transform 0.18s var(--ease), filter 0.18s, background 0.2s, color 0.2s, border-color 0.2s; }
+    .btn { display: inline-flex; align-items: center; gap: 9px; min-height: 52px; padding: 15px 30px; border-radius: 100px; font-family: var(--f-disp); font-weight: 800; font-size: 14px; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: none; transition: transform 0.18s var(--ease), filter 0.18s, background 0.2s, color 0.2s, border-color 0.2s; }
     .btn:hover { transform: translateY(-2px); }
     .btn svg { transition: transform 0.2s var(--ease); }
     .btn:hover svg { transform: translateX(4px); }
-    .btn-gold { background: var(--gold); color: var(--court); }
-    .btn-gold:hover { filter: brightness(1.07); }
-    .btn-line-light { background: transparent; color: var(--paper); border: 1px solid rgba(255,255,255,0.34); }
-    .btn-line-light:hover { border-color: var(--paper); background: rgba(255,255,255,0.06); }
-    .btn-line-dark { background: transparent; color: var(--court); border: 1px solid var(--court); }
-    .btn-line-dark:hover { background: var(--court); color: var(--paper); }
+    .btn-sun { background: var(--sun); color: var(--navy); }
+    .btn-sun:hover { filter: brightness(1.05); }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn-navy:hover { filter: brightness(1.25); }
+    .btn-ghost-light { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4); }
+    .btn-ghost-light:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+    .btn-ghost-dark { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+    .btn-ghost-dark:hover { background: var(--navy); color: var(--white); }
 
     /* ════════════════════ HERO ════════════════════ */
     @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
-    .hero { position: relative; background: var(--court); overflow: hidden; min-height: 100svh; display: flex; flex-direction: column; }
-    .hero-court { position: absolute; inset: 0; pointer-events: none; }
-    .hero-court svg { width: 100%; height: 100%; }
-    /* gold "kitchen" zones — the accent motif, glowing under floodlights */
-    .kitchen-glow { position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(120% 60% at 50% -10%, rgba(242,194,52,0.10), transparent 60%),
-        radial-gradient(80% 50% at 80% 110%, rgba(43,110,180,0.18), transparent 70%); }
-    /* Court draw-in: pure CSS auto-play (no JS/rAF). Lines are visible by
-       default, so if animations never run, the court still shows. */
-    .crt { stroke-dasharray: var(--l); stroke-dashoffset: 0; }
-    @media (prefers-reduced-motion: no-preference) {
-      .crt { stroke-dashoffset: var(--l); animation: draw 1.6s var(--ease) forwards; }
-      .crt.b { animation-delay: 0.15s; } .crt.c { animation-delay: 0.30s; } .crt.d { animation-delay: 0.45s; }
+    .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; background: var(--navy); overflow: hidden; }
+    /* ▶ HERO PHOTO: save the OHANA wave-mural court shot as img/court-ohana.jpg.
+         If missing, the navy + court-blue wash below shows — never broken. ◀ */
+    .hero-photo {
+      position: absolute; inset: 0; background-color: var(--navy);
+      background-image:
+        linear-gradient(180deg, rgba(15,34,66,0.30) 0%, rgba(15,34,66,0.20) 40%, rgba(15,34,66,0.86) 100%),
+        linear-gradient(90deg, rgba(15,34,66,0.62) 0%, rgba(15,34,66,0.10) 55%, transparent 100%),
+        url('img/court-ohana.jpg');
+      background-size: cover; background-position: center;
     }
-    @keyframes draw { from { stroke-dashoffset: var(--l); } to { stroke-dashoffset: 0; } }
-
-    .hero-top { position: relative; z-index: 3; flex: 1; display: flex; align-items: flex-end;
-      max-width: var(--maxw); width: 100%; margin: 0 auto; padding: 0 clamp(20px,4vw,40px) clamp(36px,5vw,72px); }
-    .hero-kicker { font-family: var(--f-mono); font-size: var(--fs-mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; display: flex; align-items: center; gap: 12px; }
-    .hero-kicker::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
-    .hero h1 { font-family: var(--f-disp); font-weight: 900; font-size: var(--fs-hero); line-height: 0.86; letter-spacing: -0.025em; color: var(--paper); margin-bottom: 30px; font-optical-sizing: auto; }
-    .hero h1 em { font-style: italic; font-weight: 900; color: var(--gold); }
-    .hero-sub { font-size: clamp(1rem,1.5vw,1.2rem); color: var(--on-court-soft); line-height: 1.7; max-width: 44ch; margin-bottom: 38px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-
-    /* dimension annotation down the left edge */
-    .hero-dim { position: absolute; left: clamp(20px,4vw,40px); top: 0; bottom: 0; z-index: 3; display: flex; align-items: center; pointer-events: none; }
-    .hero-dim span { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-court-faint); writing-mode: vertical-rl; transform: rotate(180deg); }
-
-    /* spec dataplate (replaces stat bar) */
-    .dataplate { position: relative; z-index: 3; background: var(--court-2); border-top: 1px solid rgba(255,255,255,0.10); }
-    .dataplate-in { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(20px,4vw,40px);
-      display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); }
-    .dp { padding: 22px 8px; display: flex; flex-direction: column; gap: 4px; border-right: 1px solid rgba(255,255,255,0.08); }
-    .dp:last-child { border-right: none; }
-    .dp b { font-family: var(--f-disp); font-weight: 900; font-size: clamp(1.4rem,2.4vw,1.9rem); color: var(--gold); line-height: 1; }
-    .dp span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-court-faint); }
-
+    /* fallback flourish behind/over (visible mainly when no photo) */
+    .hero-wash { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(70% 60% at 85% 0%, rgba(41,169,225,0.30), transparent 60%); }
+    .hero-in { position: relative; z-index: 3; flex: 1; display: flex; align-items: flex-end; max-width: var(--maxw); width: 100%; margin: 0 auto; padding: 0 clamp(18px,4vw,40px) clamp(40px,6vw,84px); }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 11px; font-family: var(--f-mono); font-size: var(--fs-mono); letter-spacing: 0.22em; text-transform: uppercase; color: var(--sun); margin-bottom: 22px; }
+    .hero-kicker::before { content: ''; width: 38px; height: 2px; background: var(--sun); }
+    .hero h1 { font-family: var(--f-disp); font-weight: 900; font-size: var(--fs-hero); line-height: 0.9; letter-spacing: -0.025em; text-transform: uppercase; color: var(--white); margin-bottom: 24px; }
+    .hero h1 em { font-style: normal; color: var(--sun); }
+    .hero-sub { font-size: clamp(1rem,1.6vw,1.25rem); color: var(--on-navy-soft); line-height: 1.65; max-width: 46ch; margin-bottom: 36px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
     @media (prefers-reduced-motion: no-preference) {
-      .js .hero-kicker { animation: rise 0.7s var(--ease) 0.5s both; }
-      .js .hero h1      { animation: rise 0.9s var(--ease) 0.62s both; }
-      .js .hero-sub     { animation: rise 0.7s var(--ease) 0.82s both; }
-      .js .hero-actions { animation: rise 0.7s var(--ease) 0.96s both; }
+      .js .hero-kicker { animation: rise 0.7s var(--ease) 0.1s both; }
+      .js .hero h1 { animation: rise 0.85s var(--ease) 0.24s both; }
+      .js .hero-sub { animation: rise 0.7s var(--ease) 0.44s both; }
+      .js .hero-actions { animation: rise 0.7s var(--ease) 0.58s both; }
     }
+
+    /* stat strip — navy with sun numbers, brand signage look */
+    .stats { background: var(--navy-2); position: relative; z-index: 3; }
+    .stats-in { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(18px,4vw,40px); display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .stat { padding: 24px 10px; text-align: center; border-right: 1px solid var(--line-navy); }
+    .stat:last-child { border-right: none; }
+    .stat b { display: block; font-family: var(--f-disp); font-weight: 900; font-size: clamp(1.5rem,2.6vw,2.1rem); color: var(--sun); line-height: 1; text-transform: uppercase; }
+    .stat span { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-navy-dim); display: block; margin-top: 6px; }
 
     /* ════════════════════ SECTION SHELL ════════════════════ */
-    section[id] { scroll-margin-top: 80px; }
-    .sec { padding: var(--pad) clamp(20px,4vw,40px); }
+    section[id] { scroll-margin-top: 82px; }
+    .sec { padding: var(--pad) clamp(18px,4vw,40px); }
     .wrap { max-width: var(--maxw); margin: 0 auto; }
-    .on-court { background: var(--court); }
-    .sec-head { margin-bottom: clamp(40px,5vw,64px); }
-    .sec-head .h2 { margin-top: 14px; max-width: 18ch; }
+    .light { background: var(--mist); }
+    .on-navy { background: var(--navy); }
+    .sec-head { margin-bottom: clamp(36px,5vw,60px); max-width: 60ch; }
+    .sec-head .h2 { margin-top: 12px; }
 
-    /* net-line divider — recurring motif */
-    .netline { position: relative; height: 1px; background: var(--net-line); }
-    .netline.dark { background: var(--line-bone); }
-    .netline::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(currentColor 1px, transparent 1.5px); background-size: 18px 1px; background-position: 0 0; opacity: 0.5; color: var(--gold); }
-
-    /* reveal — gated on .js so content never sticks hidden */
     @media (prefers-reduced-motion: no-preference) {
-      .js .rv { opacity: 0; transform: translateY(14px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+      .js .rv { opacity: 0; transform: translateY(16px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
       .js .rv.in { opacity: 1; transform: none; }
       .js .rv.d1 { transition-delay: 0.08s; } .js .rv.d2 { transition-delay: 0.16s; } .js .rv.d3 { transition-delay: 0.24s; }
     }
 
-    /* ──────── THE CLUB (editorial index) ──────── */
-    .club { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(48px,7vw,110px); align-items: start; }
-    .club-lead p { margin-bottom: 22px; }
-    .index { border-top: 1px solid var(--line-bone); }
-    .ix { display: grid; grid-template-columns: auto 1fr; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--line-bone); transition: padding-left 0.25s var(--ease); }
-    .ix:hover { padding-left: 10px; }
-    .ix-n { font-family: var(--f-mono); font-size: 11px; color: var(--court); padding-top: 6px; }
-    .ix h3 { font-family: var(--f-disp); font-weight: 600; font-size: 1.18rem; color: var(--court); margin-bottom: 5px; letter-spacing: -0.01em; }
-    .ix p { font-size: 0.92rem; color: var(--muted); line-height: 1.55; }
+    /* photo block — graceful fallback to navy/court wash if image missing */
+    .photo { position: relative; border-radius: var(--r); overflow: hidden; background-color: var(--navy);
+      background-image: linear-gradient(140deg, rgba(41,169,225,0.45), rgba(23,58,108,0.9));
+      background-size: cover; background-position: center; min-height: 320px; }
+    .photo .tag { position: absolute; left: 16px; bottom: 16px; background: var(--sun); color: var(--navy); font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 13px; border-radius: 100px; font-weight: 500; }
 
-    /* ──────── COURTS — annotated spec sheet (the signature) ──────── */
-    .courts-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(40px,5vw,72px); align-items: center; }
-    .courtdraw { position: relative; }
-    .courtdraw svg { width: 100%; height: auto; overflow: visible; }
-    .cd-fill { fill: rgba(242,194,52,0.14); }
-    .cd-court { fill: rgba(255,255,255,0.025); stroke: var(--paper); stroke-width: 1.4; }
-    .cd-line { stroke: var(--paper); stroke-width: 1.1; }
-    .cd-net { stroke: var(--gold); stroke-width: 2; }
-    .cd-lead { stroke: var(--gold); stroke-width: 0.8; stroke-dasharray: 3 3; }
-    .cd-dot { fill: var(--gold); }
-    .cd-txt { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
-    .cd-txt.w { fill: var(--on-court); } .cd-txt.g { fill: var(--gold); }
-    .courts-specs { list-style: none; }
-    .courts-specs li { padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.10); }
-    .courts-specs li:last-child { border-bottom: 1px solid rgba(255,255,255,0.10); }
-    .courts-specs .k { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 6px; }
-    .courts-specs .v { font-family: var(--f-disp); font-weight: 600; font-size: 1.15rem; color: var(--paper); }
-    .courts-specs .v small { display: block; font-family: var(--f-body); font-weight: 400; font-size: 0.85rem; color: var(--on-court-soft); margin-top: 4px; letter-spacing: 0; text-transform: none; }
+    /* ──────── CLUB ──────── */
+    .club { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px,6vw,88px); align-items: center; }
+    .club-photo { min-height: 440px; background-image: linear-gradient(140deg, rgba(41,169,225,0.5), rgba(23,58,108,0.92)), url('img/court-hyatt.jpg'); }
+    .club-lead p { margin-bottom: 20px; }
+    .amenities { margin-top: 30px; border-top: 1px solid var(--line); }
+    .am { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .am-ic { width: 34px; height: 34px; flex-shrink: 0; color: var(--court); }
+    .am h3 { font-family: var(--f-disp); font-weight: 800; font-size: 1.05rem; color: var(--navy); text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 3px; }
+    .am p { font-size: 0.92rem; color: var(--muted); line-height: 1.5; }
 
-    /* ──────── WAYS TO PLAY (editorial menu) ──────── */
-    .menu { border-top: 1px solid var(--line-bone); }
-    .menu-row { display: grid; grid-template-columns: auto 1fr auto; gap: clamp(16px,3vw,48px); align-items: baseline; padding: clamp(22px,3vw,34px) 0; border-bottom: 1px solid var(--line-bone); text-decoration: none; color: inherit; transition: background 0.2s, padding-left 0.25s var(--ease); }
-    .menu-row:hover { padding-left: 12px; background: linear-gradient(90deg, rgba(242,194,52,0.10), transparent 60%); }
-    .menu-tag { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--court); padding-top: 8px; min-width: 92px; }
-    .menu-main h3 { font-family: var(--f-disp); font-weight: 600; font-size: clamp(1.5rem,3vw,2.1rem); color: var(--court); letter-spacing: -0.015em; margin-bottom: 8px; display: flex; align-items: center; gap: 14px; }
-    .menu-main h3 .arr { font-family: var(--f-body); color: var(--court); opacity: 0; transform: translateX(-6px); transition: opacity 0.2s, transform 0.2s var(--ease); }
-    .menu-row:hover .arr { opacity: 1; transform: none; }
-    .menu-main p { font-size: 0.98rem; color: var(--muted); line-height: 1.6; max-width: 54ch; }
-    .menu-note { font-family: var(--f-mono); font-size: 11px; color: var(--muted); white-space: nowrap; padding-top: 8px; }
+    /* ──────── COURTS ──────── */
+    .courts-gallery { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; margin-bottom: clamp(32px,4vw,52px); }
+    .courts-gallery .photo:nth-child(1) { grid-row: 1 / 3; min-height: 420px; background-image: linear-gradient(140deg, rgba(41,169,225,0.45), rgba(23,58,108,0.9)), url('img/court-aloha.jpg'); }
+    .courts-gallery .photo:nth-child(2) { min-height: 200px; background-image: linear-gradient(140deg, rgba(41,169,225,0.5), rgba(23,58,108,0.92)), url('img/court-ohana.jpg'); }
+    .courts-gallery .photo:nth-child(3) { min-height: 200px; background-image: linear-gradient(140deg, rgba(41,169,225,0.5), rgba(23,58,108,0.92)), url('img/court-hyatt.jpg'); }
+    .specs { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--line-navy); border: 1px solid var(--line-navy); border-radius: var(--r); overflow: hidden; }
+    .spec { background: var(--navy); padding: 24px 22px; }
+    .spec .k { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sun); display: block; margin-bottom: 8px; }
+    .spec .v { font-family: var(--f-disp); font-weight: 800; font-size: 1.05rem; color: var(--white); text-transform: uppercase; letter-spacing: -0.01em; }
+    .spec p { font-size: 0.85rem; color: var(--on-navy-soft); line-height: 1.5; margin-top: 6px; }
 
-    /* ──────── COACHING ──────── */
-    .coach { display: grid; grid-template-columns: 0.85fr 1fr; gap: clamp(48px,6vw,96px); align-items: start; }
-    .coach-list { display: grid; gap: 1px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.10); }
-    .coach-item { background: var(--court); padding: 26px 28px; transition: background 0.2s; }
-    .coach-item:hover { background: var(--court-2); }
-    .coach-item .n { font-family: var(--f-mono); font-size: 11px; color: var(--gold); }
-    .coach-item h3 { font-family: var(--f-disp); font-weight: 600; font-size: 1.3rem; color: var(--paper); margin: 8px 0 8px; letter-spacing: -0.01em; }
-    .coach-item p { font-size: 0.95rem; color: var(--on-court-soft); line-height: 1.6; margin-bottom: 12px; }
-    .coach-item .meta { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-court-faint); }
+    /* ──────── PLAY & TRAIN (real pricing) ──────── */
+    .price-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .price-card { background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--court); border-radius: var(--r); padding: 30px 30px 26px; display: flex; flex-direction: column; transition: transform 0.2s var(--ease), box-shadow 0.2s; }
+    .price-card.feat { border-top-color: var(--sun); }
+    .price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(23,58,108,0.12); }
+    .price-card h3 { font-family: var(--f-disp); font-weight: 900; font-size: 1.55rem; color: var(--navy); text-transform: uppercase; letter-spacing: -0.015em; }
+    .price-card .desc { font-size: 0.98rem; color: var(--muted); line-height: 1.55; margin: 8px 0 18px; flex-grow: 1; }
+    .price-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .pill { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); background: var(--mist); border: 1px solid var(--line); border-radius: 100px; padding: 6px 12px; }
+    .price-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .price-row .amt { font-family: var(--f-disp); font-weight: 900; font-size: 2.1rem; color: var(--navy); }
+    .price-row .amt small { font-family: var(--f-mono); font-weight: 400; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.04em; }
+    .price-row .btn { min-height: 44px; padding: 11px 22px; }
+    .price-note { text-align: center; font-family: var(--f-mono); font-size: 12px; color: var(--muted); margin-top: 22px; }
+
+    /* ──────── MEMBERSHIP (no invented prices) ──────── */
+    .member { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,72px); align-items: center; }
+    .member-list { list-style: none; display: grid; gap: 14px; }
+    .member-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 1rem; color: var(--on-navy); }
+    .member-list svg { flex-shrink: 0; color: var(--sun); margin-top: 2px; }
+    .member-cta { background: rgba(255,255,255,0.05); border: 1px solid var(--line-navy); border-radius: var(--r); padding: clamp(28px,3vw,40px); }
+    .member-cta .eyebrow { color: var(--sun); }
+    .member-cta h3 { font-family: var(--f-disp); font-weight: 900; font-size: 1.7rem; color: var(--white); text-transform: uppercase; margin: 6px 0 12px; letter-spacing: -0.01em; }
+    .member-cta p { color: var(--on-navy-soft); font-size: 0.98rem; line-height: 1.6; margin-bottom: 22px; }
 
     /* ──────── EVENTS ──────── */
-    .events { display: grid; grid-template-columns: 0.9fr 1fr; gap: clamp(40px,5vw,80px); align-items: center; }
-    .events-num { font-family: var(--f-disp); font-weight: 900; font-size: clamp(9rem,22vw,18rem); line-height: 0.8; color: var(--court); letter-spacing: -0.04em; position: relative; }
-    .events-num em { font-style: normal; -webkit-text-stroke: 2px var(--court); color: transparent; }
-    .events-num .cap { display: block; font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); -webkit-text-stroke: 0; margin-top: 8px; }
-    .events-types { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 32px; }
-    .events-types span { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--court); border: 1px solid var(--line-bone); border-radius: 100px; padding: 8px 16px; }
+    .events { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,72px); align-items: center; }
+    .events-photo { min-height: 400px; background-image: linear-gradient(140deg, rgba(41,169,225,0.45), rgba(23,58,108,0.9)), url('img/court-aloha.jpg'); }
+    .events-types { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 30px; }
+    .events-types span { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); background: var(--white); border: 1px solid var(--line); border-radius: 100px; padding: 9px 16px; }
 
     /* ──────── STORY ──────── */
-    .story { display: grid; grid-template-columns: 1fr 0.92fr; gap: clamp(48px,6vw,96px); align-items: center; }
-    .story-body p { margin-bottom: 20px; }
-    .story-quote { background: var(--court); color: var(--paper); border-radius: 4px; padding: clamp(32px,4vw,52px); position: relative; overflow: hidden; }
-    .story-quote .mark { font-family: var(--f-disp); font-weight: 900; font-style: italic; font-size: 120px; line-height: 0.5; color: var(--gold); opacity: 0.28; display: block; margin-bottom: 10px; }
-    .story-quote blockquote { font-family: var(--f-disp); font-weight: 500; font-style: italic; font-size: clamp(1.3rem,2.2vw,1.7rem); line-height: 1.35; margin-bottom: 18px; }
-    .story-quote .by { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
-    .timeline { margin-top: 28px; border-top: 1px solid rgba(255,255,255,0.12); }
-    .tl { display: grid; grid-template-columns: 54px 1fr; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .tl .yr { font-family: var(--f-mono); font-size: 11px; color: var(--gold); }
-    .tl .tx { font-size: 0.86rem; color: var(--on-court-soft); line-height: 1.5; }
+    .story { display: grid; grid-template-columns: 1fr 0.9fr; gap: clamp(40px,5vw,84px); align-items: center; }
+    .story-body p { margin-bottom: 18px; }
+    .story-quote { background: var(--navy-2); border-radius: var(--r); padding: clamp(30px,4vw,48px); position: relative; overflow: hidden; }
+    .story-quote::before { content: '“'; position: absolute; top: 4px; left: 22px; font-family: var(--f-disp); font-weight: 900; font-size: 120px; color: var(--court); opacity: 0.3; }
+    .story-quote blockquote { position: relative; font-family: var(--f-disp); font-weight: 700; font-size: clamp(1.25rem,2vw,1.6rem); line-height: 1.32; color: var(--white); margin-bottom: 18px; letter-spacing: -0.01em; }
+    .story-quote .by { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sun); }
+    .timeline { margin-top: 26px; border-top: 1px solid var(--line-navy); }
+    .tl { display: grid; grid-template-columns: 52px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line-navy); }
+    .tl .yr { font-family: var(--f-mono); font-size: 11px; color: var(--sun); }
+    .tl .tx { font-size: 0.86rem; color: var(--on-navy-soft); line-height: 1.5; }
 
-    /* ──────── MEMBERSHIP — printed rate card ──────── */
-    .rates { border: 1px solid var(--net-line); border-radius: 4px; overflow: hidden; }
-    .rate { display: grid; grid-template-columns: 1fr 1.4fr auto auto; gap: clamp(16px,3vw,40px); align-items: center; padding: clamp(24px,3vw,34px) clamp(20px,3vw,36px); border-bottom: 1px solid var(--net-line); transition: background 0.2s; }
-    .rate:last-child { border-bottom: none; }
-    .rate:hover { background: rgba(255,255,255,0.03); }
-    .rate.feat { background: rgba(242,194,52,0.07); box-shadow: inset 3px 0 0 var(--gold); }
-    .rate-name { font-family: var(--f-disp); font-weight: 600; font-size: 1.5rem; color: var(--paper); letter-spacing: -0.01em; }
-    .rate-name .badge { display: block; font-family: var(--f-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
-    .rate-feats { font-size: 0.9rem; color: var(--on-court-soft); line-height: 1.55; }
-    .rate-price { text-align: right; white-space: nowrap; }
-    .rate-price b { font-family: var(--f-disp); font-weight: 900; font-size: 2rem; color: var(--gold); }
-    .rate-price span { font-family: var(--f-mono); font-size: 10px; color: var(--on-court-faint); display: block; letter-spacing: 0.08em; }
-    .rate .btn { white-space: nowrap; }
-    .rate-note { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.04em; color: var(--on-court-faint); text-align: center; margin-top: 20px; }
-
-    /* ──────── CONTACT / CLOSE ──────── */
-    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px,6vw,88px); align-items: start; }
-    .contact-cta h2 { font-family: var(--f-disp); font-weight: 900; font-size: var(--fs-h2); line-height: 0.98; letter-spacing: -0.02em; color: var(--paper); margin: 16px 0 24px; }
-    .info { display: grid; gap: 20px; margin: 32px 0; }
-    .info-row { display: grid; grid-template-columns: 90px 1fr; gap: 16px; align-items: baseline; }
-    .info-k { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
-    .info-v { font-size: 0.98rem; color: var(--on-court); line-height: 1.5; }
-    .info-v a { text-decoration: none; transition: color 0.15s; } .info-v a:hover { color: var(--gold); }
-    .info-v small { color: var(--on-court-faint); }
-    .hours { border: 1px solid rgba(255,255,255,0.10); border-radius: 4px; overflow: hidden; }
-    .hours-h { background: rgba(242,194,52,0.10); padding: 14px 22px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
-    .hours-r { display: grid; grid-template-columns: 1fr 1fr; padding: 14px 22px; border-top: 1px solid rgba(255,255,255,0.07); }
-    .hours-r .d { font-family: var(--f-mono); font-size: 12px; color: var(--on-court-soft); }
-    .hours-r .t { font-size: 13px; color: var(--on-court); font-weight: 500; }
-    .hours-r .t.dim { color: var(--on-court-faint); }
-    .park { margin-top: 14px; display: flex; gap: 12px; align-items: flex-start; background: rgba(242,194,52,0.06); border: 1px solid rgba(242,194,52,0.18); border-radius: 4px; padding: 16px 18px; }
-    .park svg { flex-shrink: 0; color: var(--gold); margin-top: 2px; }
-    .park p { font-size: 12.5px; color: var(--on-court-soft); line-height: 1.6; } .park strong { color: var(--gold); font-weight: 500; }
+    /* ──────── VISIT ──────── */
+    .visit { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,5vw,80px); align-items: start; }
+    .info { display: grid; gap: 18px; margin: 28px 0; }
+    .info-row { display: grid; grid-template-columns: 84px 1fr; gap: 16px; align-items: baseline; }
+    .info-k { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sun); }
+    .info-v { font-size: 0.98rem; color: var(--on-navy); line-height: 1.5; }
+    .info-v a { text-decoration: none; transition: color 0.15s; } .info-v a:hover { color: var(--sun); }
+    .info-v small { color: var(--on-navy-dim); }
+    .hours { border: 1px solid var(--line-navy); border-radius: var(--r); overflow: hidden; }
+    .hours-h { background: var(--sun); padding: 14px 22px; font-family: var(--f-disp); font-weight: 900; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--navy); }
+    .hours-r { display: grid; grid-template-columns: 1fr auto; padding: 14px 22px; border-top: 1px solid var(--line-navy); gap: 10px; }
+    .hours-r .d { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-navy-soft); }
+    .hours-r .t { font-size: 13px; color: var(--on-navy); font-weight: 500; text-align: right; }
+    .hours-r .t .closed { color: var(--court); }
+    .park { margin-top: 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-navy); border-radius: var(--r); overflow: hidden; }
+    .park-map { min-height: 220px; background-image: linear-gradient(140deg, rgba(41,169,225,0.4), rgba(23,58,108,0.9)), url('img/parking-map.png'); background-size: cover; background-position: center; }
+    .park-body { padding: 20px 22px; }
+    .park-body .eyebrow { color: var(--sun); margin-bottom: 12px; }
+    .park-steps { list-style: none; counter-reset: p; display: grid; gap: 11px; }
+    .park-steps li { counter-increment: p; display: grid; grid-template-columns: 26px 1fr; gap: 12px; font-size: 0.92rem; color: var(--on-navy-soft); line-height: 1.45; }
+    .park-steps li::before { content: counter(p); font-family: var(--f-mono); font-size: 11px; font-weight: 500; color: var(--navy); background: var(--sun); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
     /* ──────── FOOTER ──────── */
-    footer { background: var(--court-2); padding: clamp(48px,6vw,72px) clamp(20px,4vw,40px) 32px; }
-    .foot-top { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; margin-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .foot-name { font-family: var(--f-disp); font-weight: 900; font-size: 20px; color: var(--paper); margin-bottom: 6px; }
-    .foot-tag { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    footer { background: var(--navy-2); padding: clamp(44px,6vw,68px) clamp(18px,4vw,40px) 30px; }
+    .foot-top { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 38px; padding-bottom: 36px; margin-bottom: 22px; border-bottom: 1px solid var(--line-navy); }
+    .foot-name { font-family: var(--f-disp); font-weight: 900; font-size: 21px; color: var(--white); text-transform: uppercase; margin-bottom: 5px; }
+    .foot-tag { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sun); margin-bottom: 18px; }
     .foot-soc { display: flex; gap: 10px; }
-    .foot-soc a { width: 44px; height: 44px; border-radius: 8px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: var(--on-court-soft); text-decoration: none; transition: background 0.2s, color 0.2s; }
-    .foot-soc a:hover { background: rgba(255,255,255,0.12); color: var(--paper); }
-    .foot-col h2 { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-court-faint); margin-bottom: 16px; }
+    .foot-soc a { width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; color: var(--on-navy-soft); text-decoration: none; transition: background 0.2s, color 0.2s; }
+    .foot-soc a:hover { background: var(--sun); color: var(--navy); }
+    .foot-col h2 { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-navy-dim); margin-bottom: 15px; }
     .foot-col ul { list-style: none; display: grid; gap: 2px; }
-    .foot-col a { display: inline-flex; align-items: center; min-height: 36px; font-size: 14px; color: var(--on-court-soft); text-decoration: none; transition: color 0.15s; }
-    .foot-col a:hover { color: var(--paper); }
+    .foot-col a { display: inline-flex; align-items: center; min-height: 36px; font-size: 14px; color: var(--on-navy-soft); text-decoration: none; transition: color 0.15s; }
+    .foot-col a:hover { color: var(--white); }
     .foot-bot { max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-    .foot-bot span { font-size: 12.5px; color: var(--on-court-faint); }
-    .foot-bot a { color: var(--gold); text-decoration: none; opacity: 0.7; } .foot-bot a:hover { opacity: 1; }
+    .foot-bot span { font-size: 12.5px; color: var(--on-navy-dim); }
+    .foot-bot a { color: var(--sun); text-decoration: none; opacity: 0.8; } .foot-bot a:hover { opacity: 1; }
 
     /* ════════════════════ MOBILE ════════════════════ */
     @media (max-width: 920px) {
       .nav-links { display: none; }
       .burger { display: flex; }
-      .club, .courts-grid, .coach, .events, .story, .contact { grid-template-columns: 1fr; }
-      .courts-grid { gap: 40px; } .events-num { font-size: clamp(8rem,30vw,12rem); }
-      .rate { grid-template-columns: 1fr auto; gap: 14px 20px; }
-      .rate-feats { grid-column: 1 / -1; order: 3; }
-      .rate .btn { grid-column: 1 / -1; order: 4; justify-content: center; }
+      .club, .events, .story, .member, .visit { grid-template-columns: 1fr; }
+      .courts-gallery { grid-template-columns: 1fr 1fr; }
+      .courts-gallery .photo:nth-child(1) { grid-row: auto; grid-column: 1 / 3; min-height: 280px; }
+      .specs { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .price-grid { grid-template-columns: 1fr; }
       .foot-top { grid-template-columns: 1fr 1fr; gap: 28px; }
     }
     @media (max-width: 540px) {
-      :root { --pad: clamp(56px,14vw,80px); }
+      :root { --pad: clamp(56px,13vw,80px); }
       body { font-size: 16px; }
-      .hero h1 { font-size: clamp(3rem,15vw,5rem); }
-      .hero-dim { display: none; }
+      .hero h1 { font-size: clamp(2.6rem,12vw,4rem); }
       .hero-actions { flex-direction: column; } .hero-actions .btn { width: 100%; justify-content: center; }
-      .dataplate-in { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .dp:nth-child(2){ border-right: none; } .dp:nth-child(3),.dp:nth-child(4){ border-top: 1px solid rgba(255,255,255,0.08); }
-      .menu-row { grid-template-columns: 1fr; gap: 8px; } .menu-note { padding-top: 0; }
-      .info-row { grid-template-columns: 1fr; gap: 4px; }
+      .stats-in { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--line-navy); }
+      .courts-gallery { grid-template-columns: 1fr; }
+      .courts-gallery .photo:nth-child(1) { grid-column: auto; }
+      .specs { grid-template-columns: 1fr; }
+      .info-row { grid-template-columns: 1fr; gap: 3px; }
       .foot-top { grid-template-columns: 1fr; gap: 24px; }
       .foot-bot { flex-direction: column; }
     }
   </style>
 
-  <!-- Set .js before paint so the scroll-reveal hidden state only applies when
-       JS is present. No JS → everything renders fully visible. -->
+  <!-- Set .js before paint so reveal hidden-state only applies with JS present. -->
   <script>document.documentElement.className += ' js';</script>
 </head>
 <body>
@@ -378,35 +324,34 @@
   <nav class="nav" aria-label="Main">
     <div class="nav-in">
       <a href="#top" class="brand" aria-label="OHANA Pickleball Club — home">
-        <svg class="brand-badge" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <rect x="1" y="1" width="38" height="38" rx="7" fill="#0A1B33" stroke="#F2C234" stroke-width="1.4"/>
-          <rect x="9" y="11" width="22" height="18" rx="1" fill="none" stroke="#fff" stroke-width="1" opacity="0.85"/>
-          <line x1="9" y1="20" x2="31" y2="20" stroke="#F2C234" stroke-width="1.3"/>
-          <line x1="20" y1="11" x2="20" y2="29" stroke="#fff" stroke-width="0.8" opacity="0.6"/>
-          <circle cx="20" cy="20" r="1.4" fill="#F2C234"/>
+        <svg class="brand-badge" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="41" height="41" rx="10" fill="#173A6C" stroke="#29A9E1" stroke-width="2"/>
+          <text x="22" y="19" font-family="Archivo, sans-serif" font-weight="900" font-size="11" fill="#fff" text-anchor="middle" letter-spacing="0.5">OHANA</text>
+          <path d="M22 22c-1.6-1.6-3.6-1.9-3.6-1.9s.6 2 2.2 3.2M22 22c1.6-1.6 3.6-1.9 3.6-1.9s-.6 2-2.2 3.2M22 22v6" stroke="#29A9E1" stroke-width="1.2" stroke-linecap="round"/>
+          <text x="22" y="36" font-family="Archivo, sans-serif" font-weight="700" font-size="4.4" fill="#29A9E1" text-anchor="middle" letter-spacing="0.6">PICKLEBALL CLUB</text>
         </svg>
-        <span class="brand-name">OHANA<em>Pickleball · Maui</em></span>
+        <span class="brand-txt">OHANA<em>Pickleball · Maui</em></span>
       </a>
       <ul class="nav-links">
         <li><a href="#courts">Courts</a></li>
-        <li><a href="#play">Play</a></li>
-        <li><a href="#coaching">Coaching</a></li>
-        <li><a href="#events">Events</a></li>
+        <li><a href="#play">Play &amp; Train</a></li>
         <li><a href="#membership">Membership</a></li>
+        <li><a href="#events">Events</a></li>
         <li><a href="#story">Story</a></li>
-        <li><a href="#contact" class="nav-cta">Book a Court</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#play" class="nav-cta">Book a Court</a></li>
       </ul>
       <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
     </div>
     <div class="drawer" id="drawer">
       <ul>
         <li><a href="#courts">Courts</a></li>
-        <li><a href="#play">Play</a></li>
-        <li><a href="#coaching">Coaching</a></li>
-        <li><a href="#events">Events</a></li>
+        <li><a href="#play">Play &amp; Train</a></li>
         <li><a href="#membership">Membership</a></li>
+        <li><a href="#events">Events</a></li>
         <li><a href="#story">Story</a></li>
-        <li><a href="#contact" class="dr-cta">Book a Court</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#play" class="dr-cta">Book a Court</a></li>
       </ul>
     </div>
   </nav>
@@ -417,201 +362,172 @@
 
 <!-- ════════════════════ HERO ════════════════════ -->
 <section class="hero" aria-labelledby="hero-h1">
-  <!-- ▶ Optional: a floodlit night photo of the courts can layer beneath the
-       line-art (position:absolute, inset:0, behind .hero-court). The flat navy
-       + drawn court already carry the poster on their own. ◀ -->
-  <div class="kitchen-glow" aria-hidden="true"></div>
-  <div class="hero-court" aria-hidden="true">
-    <svg viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice">
-      <!-- perspective court, floodlit -->
-      <g opacity="0.5">
-        <polygon class="cd-fill" points="430,250 1010,250 1180,470 260,470"/>
-        <polygon class="cd-fill" points="260,760 1180,760 1320,1000 120,1000"/>
-        <polygon class="crt" points="430,250 1010,250 1320,1000 120,1000" fill="none" stroke="#fff" stroke-width="2" style="--l:3200px"/>
-        <line class="crt b" x1="260" y1="470" x2="1180" y2="470" stroke="#fff" stroke-width="1.4" style="--l:920px"/>
-        <line class="crt b" x1="260" y1="760" x2="1180" y2="760" stroke="#fff" stroke-width="1.4" style="--l:920px"/>
-        <line class="crt c" x1="190" y1="615" x2="1250" y2="615" stroke="#F2C234" stroke-width="2.4" style="--l:1060px"/>
-        <line class="crt d" x1="720" y1="250" x2="720" y2="470" stroke="#fff" stroke-width="1" style="--l:220px"/>
-        <line class="crt d" x1="720" y1="760" x2="720" y2="1000" stroke="#fff" stroke-width="1" style="--l:240px"/>
-      </g>
-    </svg>
-  </div>
-
-  <div class="hero-dim" aria-hidden="true"><span>20 ft × 44 ft · regulation</span></div>
-
-  <div class="hero-top">
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-wash" aria-hidden="true"></div>
+  <div class="hero-in">
     <div>
-      <p class="hero-kicker">OHANA Pickleball Club · Kaʻanapali, Maui</p>
-      <h1 id="hero-h1">Twelve&nbsp;courts.<br><em>One ohana.</em></h1>
-      <p class="hero-sub">Maui's home court — twelve covered, lighted professional courts inside Kaʻanapali Beach Resort. Open to the island and its guests, every single day.</p>
+      <span class="hero-kicker">Play With Aloha · Kaʻanapali, Maui</span>
+      <h1 id="hero-h1">Twelve courts.<br><em>One ohana.</em></h1>
+      <p class="hero-sub">Maui's home court — twelve covered, lighted pro courts inside Hyatt Regency Maui at Kaʻanapali Beach Resort. Open to the island and its guests, every day.</p>
       <div class="hero-actions">
-        <a href="#play" class="btn btn-gold">Book a court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
-        <a href="#membership" class="btn btn-line-light">Ways to play</a>
+        <a href="#play" class="btn btn-sun">Book a Court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+        <a href="#visit" class="btn btn-ghost-light">Hours &amp; Directions</a>
       </div>
     </div>
   </div>
-
-  <!-- dataplate (was a generic stat bar) -->
-  <div class="dataplate" role="region" aria-label="Club at a glance">
-    <div class="dataplate-in">
-      <div class="dp"><b>12</b><span>Covered Courts</span></div>
-      <div class="dp"><b>8AM</b><span>Open Daily</span></div>
-      <div class="dp"><b>ProShop</b><span>Full Service</span></div>
-      <div class="dp"><b>Free</b><span>Validated Parking</span></div>
+  <div class="stats" role="region" aria-label="At a glance">
+    <div class="stats-in">
+      <div class="stat"><b>12</b><span>Covered Courts</span></div>
+      <div class="stat"><b>8AM</b><span>Open Daily</span></div>
+      <div class="stat"><b>Hyatt</b><span>Regency Maui</span></div>
+      <div class="stat"><b>Free</b><span>Validated Parking</span></div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════ THE CLUB ════════════════════ -->
-<section class="sec" id="club" aria-labelledby="club-h2">
+<!-- ════════════════════ CLUB ════════════════════ -->
+<section class="sec light" id="club" aria-labelledby="club-h2">
   <div class="wrap club">
-    <div class="club-lead rv">
-      <p class="spec">The Club</p>
-      <h2 class="h2" id="club-h2" style="margin:14px 0 24px;">A destination, not a drop-in.</h2>
-      <p class="lead">Twelve covered courts inside Kaʻanapali Beach Resort, beside the Hyatt Regency — surrounded by tropical gardens, backed by a full ProShop, and run by coaches who love the game more than the business of it.</p>
-      <p class="lead">Here for a week or here to stay, you'll find your court. Drop in, take a lesson, or join the club.</p>
-      <a href="#play" class="btn btn-line-dark" style="margin-top:8px;">See how to play</a>
-    </div>
-    <div class="index rv d1" role="list">
-      <div class="ix" role="listitem"><span class="ix-n">01</span><div><h3>Twelve professional courts</h3><p>Covered, shaded, lighted — day and night play on tournament-grade surfaces.</p></div></div>
-      <div class="ix" role="listitem"><span class="ix-n">02</span><div><h3>Full-service ProShop</h3><p>Paddles, balls, apparel, refreshments and rentals — everything on-site.</p></div></div>
-      <div class="ix" role="listitem"><span class="ix-n">03</span><div><h3>Top-level coaching</h3><p>Private lessons, group clinics, learn-to-play classes, weekly organized play.</p></div></div>
-      <div class="ix" role="listitem"><span class="ix-n">04</span><div><h3>Five event spaces</h3><p>Dedicated shaded venues for private events, corporate days and tournaments.</p></div></div>
-      <div class="ix" role="listitem"><span class="ix-n">05</span><div><h3>Bocce, cornhole &amp; ping-pong</h3><p>Two bocce courts and social games for full days at the facility.</p></div></div>
-      <div class="ix" role="listitem"><span class="ix-n">06</span><div><h3>Free validated parking</h3><p>Pull a ticket, park in back, walk the bridge. Validation at the ProShop.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════ COURTS — annotated spec sheet ════════════════════ -->
-<section class="sec on-court" id="courts" aria-labelledby="courts-h2">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="spec">The Courts — 20 ft × 44 ft · regulation</p>
-      <h2 class="h2" id="courts-h2">Read it like a plan.</h2>
-    </div>
-    <div class="courts-grid">
-      <div class="courtdraw rv" role="img" aria-label="Top-down diagram of an OHANA court: 44 by 20 feet, with the 7-foot non-volley kitchen on each side of a gold net line, annotated with the covered canopy, evening lighting and tournament surface.">
-        <svg viewBox="0 0 600 380" aria-hidden="true">
-          <!-- court body -->
-          <rect class="cd-court" x="120" y="40" width="360" height="300" rx="2"/>
-          <!-- kitchen fills -->
-          <rect class="cd-fill" x="120" y="150" width="360" height="40"/>
-          <rect class="cd-fill" x="120" y="190" width="360" height="40"/>
-          <!-- lines -->
-          <line class="cd-line" x1="120" y1="150" x2="480" y2="150"/>
-          <line class="cd-line" x1="120" y1="230" x2="480" y2="230"/>
-          <line class="cd-line" x1="300" y1="40" x2="300" y2="150"/>
-          <line class="cd-line" x1="300" y1="230" x2="300" y2="340"/>
-          <!-- net -->
-          <line class="cd-net" x1="100" y1="190" x2="500" y2="190"/>
-          <g class="cd-dot"><circle cx="140" cy="190" r="1.6"/><circle cx="180" cy="190" r="1.6"/><circle cx="220" cy="190" r="1.6"/><circle cx="260" cy="190" r="1.6"/><circle cx="340" cy="190" r="1.6"/><circle cx="380" cy="190" r="1.6"/><circle cx="420" cy="190" r="1.6"/><circle cx="460" cy="190" r="1.6"/></g>
-          <!-- leader lines + labels -->
-          <line class="cd-lead" x1="300" y1="170" x2="300" y2="20"/><circle class="cd-dot" cx="300" cy="170" r="2.5"/>
-          <text class="cd-txt g" x="300" y="14" text-anchor="middle">The kitchen · 7 ft</text>
-          <line class="cd-lead" x1="500" y1="190" x2="560" y2="190"/><circle class="cd-dot" cx="500" cy="190" r="2.5"/>
-          <text class="cd-txt g" x="512" y="206">Net</text>
-          <line class="cd-lead" x1="480" y1="90" x2="540" y2="90"/><circle class="cd-dot" cx="480" cy="90" r="2.5"/>
-          <text class="cd-txt w" x="492" y="78">Covered</text><text class="cd-txt w" x="492" y="94">canopy</text>
-          <line class="cd-lead" x1="120" y1="300" x2="60" y2="300"/><circle class="cd-dot" cx="120" cy="300" r="2.5"/>
-          <text class="cd-txt w" x="108" y="290" text-anchor="end">LED</text><text class="cd-txt w" x="108" y="306" text-anchor="end">lighting</text>
-          <!-- dimension ticks -->
-          <text class="cd-txt w" x="300" y="362" text-anchor="middle" opacity="0.6">44 ft</text>
-          <text class="cd-txt w" x="92" y="194" text-anchor="end" opacity="0.6">20 ft</text>
-        </svg>
+    <div class="photo club-photo rv" role="img" aria-label="OHANA's covered blue pickleball courts at Hyatt Regency Maui, framed by tropical murals"><span class="tag">Hyatt Regency Maui · Kaʻanapali</span></div>
+    <div class="club-lead rv d1 light">
+      <span class="eyebrow">The Club</span>
+      <h2 class="h2" style="margin:12px 0 22px;">A destination, not a drop-in</h2>
+      <p class="lead">Twelve covered, lighted pro courts inside Hyatt Regency Maui — surrounded by tropical murals, backed by a full ProShop, and run by coaches who love the game more than the business of it.</p>
+      <div class="amenities">
+        <div class="am">
+          <svg class="am-ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 13 16 5l12 8M6 12v15h20V12"/><path d="M13 27v-7h6v7"/></svg>
+          <div><h3>Twelve Pro Courts</h3><p>Covered, shaded and lighted for day and night play on tournament-grade surfaces.</p></div>
+        </div>
+        <div class="am">
+          <svg class="am-ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 11h20l-2 16H8z"/><path d="M11 11V8a5 5 0 0 1 10 0v3"/></svg>
+          <div><h3>Full-Service ProShop</h3><p>Paddles, balls, apparel, rentals and refreshments — everything on-site.</p></div>
+        </div>
+        <div class="am">
+          <svg class="am-ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="10" r="5"/><path d="M6 27c0-5 4-8 10-8s10 3 10 8"/></svg>
+          <div><h3>Expert Coaching</h3><p>Private lessons, small-group coaching and learn-to-play for every level.</p></div>
+        </div>
+        <div class="am">
+          <svg class="am-ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 27V9l11-4 11 4v18"/><path d="M5 27h22M12 27v-7h8v7"/></svg>
+          <div><h3>Five Event Spaces &amp; Games</h3><p>Private-event venues plus bocce, cornhole and ping-pong for full days here.</p></div>
+        </div>
       </div>
-      <ul class="courts-specs rv d1">
-        <li><span class="k">Surface</span><span class="v">Tournament-grade<small>Cushioned acrylic, permanent nets — sanctioned-event quality.</small></span></li>
-        <li><span class="k">Cover</span><span class="v">Full canopy, all twelve<small>Shaded end to end. Play through the midday Maui sun.</small></span></li>
-        <li><span class="k">Lighting</span><span class="v">LED, into the evening<small>The best sessions happen under the Kaʻanapali stars.</small></span></li>
-        <li><span class="k">Access</span><span class="v">Open to the public<small>Guests and locals alike — drop-ins welcome from 8am daily.</small></span></li>
-      </ul>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════ WAYS TO PLAY ════════════════════ -->
+<!-- ════════════════════ COURTS ════════════════════ -->
+<section class="sec on-navy" id="courts" aria-labelledby="courts-h2">
+  <div class="wrap">
+    <div class="sec-head rv on-navy">
+      <span class="eyebrow">The Courts</span>
+      <h2 class="h2" id="courts-h2">Built for serious play</h2>
+    </div>
+    <div class="courts-gallery rv d1">
+      <div class="photo" role="img" aria-label="Covered courts with the PLAY WITH ALOHA and ocean-wave murals"><span class="tag">Play With Aloha</span></div>
+      <div class="photo" role="img" aria-label="OHANA Pickleball Maui wave-mural court under the blue shade canopy"></div>
+      <div class="photo" role="img" aria-label="Blue courts beneath the Hyatt Regency banner"></div>
+    </div>
+    <div class="specs rv d1">
+      <div class="spec"><span class="k">Surface</span><span class="v">Tournament Grade</span><p>Cushioned acrylic with permanent nets — sanctioned-event quality.</p></div>
+      <div class="spec"><span class="k">Cover</span><span class="v">Shaded, all 12</span><p>Full canopy end to end. Play through the midday Maui sun.</p></div>
+      <div class="spec"><span class="k">Lighting</span><span class="v">LED Evenings</span><p>The best sessions happen under the Kaʻanapali stars.</p></div>
+      <div class="spec"><span class="k">Access</span><span class="v">Open to All</span><p>Guests and locals — drop in during open hours, daily from 8am.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ PLAY & TRAIN (real pricing) ════════════════════ -->
 <section class="sec" id="play" aria-labelledby="play-h2">
   <div class="wrap">
-    <div class="sec-head rv">
-      <p class="spec">Ways to Play</p>
-      <h2 class="h2" id="play-h2">Pick your line.</h2>
+    <div class="sec-head rv light">
+      <span class="eyebrow">Play &amp; Train</span>
+      <h2 class="h2" id="play-h2">Book your court</h2>
+      <p class="lead" style="margin-top:14px;">Reserve a court for your crew or train with a coach. One-hour sessions, all skill levels welcome.</p>
     </div>
-    <div class="menu">
-      <a href="#contact" class="menu-row rv">
-        <span class="menu-tag">Walk-in</span>
-        <div class="menu-main"><h3>Day Pass <span class="arr">→</span></h3><p>Grab a pass and get on court — no reservation. Open play from 8am daily. Hyatt Regency guests get two complimentary passes with their stay.</p></div>
-        <span class="menu-note">from $25</span>
-      </a>
-      <a href="#contact" class="menu-row rv">
-        <span class="menu-tag">Scheduled</span>
-        <div class="menu-main"><h3>Open Play <span class="arr">→</span></h3><p>Reserve into organized sessions. We match skill levels so every game stays competitive and fun. All levels welcome.</p></div>
-        <span class="menu-note">all levels</span>
-      </a>
-      <a href="#contact" class="menu-row rv">
-        <span class="menu-tag">Private</span>
-        <div class="menu-main"><h3>Court Rental <span class="arr">→</span></h3><p>Book a full court for your group — drills, your own session, your crew. Paddle and ball rentals at the ProShop.</p></div>
-        <span class="menu-note">by the hour</span>
-      </a>
-      <a href="#coaching" class="menu-row rv">
-        <span class="menu-tag">First time</span>
-        <div class="menu-main"><h3>Learn to Play <span class="arr">→</span></h3><p>Never held a paddle? You'll be rallying — and grinning — by the end of your first session. Equipment provided, zero experience needed.</p></div>
-        <span class="menu-note">gear provided</span>
-      </a>
+    <div class="price-grid">
+      <div class="price-card rv">
+        <h3>Court Rental</h3>
+        <p class="desc">Reserve a full court for your group — open play, drills, or run your own session. Paddle and ball rentals at the ProShop.</p>
+        <div class="price-meta"><span class="pill">Up to 6 players</span><span class="pill">1 hour</span></div>
+        <div class="price-row"><div class="amt">$100</div><a href="#visit" class="btn btn-ghost-dark">Book</a></div>
+      </div>
+      <div class="price-card feat rv d1">
+        <h3>Learn to Play</h3>
+        <p class="desc">Never held a paddle? Our coaches will have you rallying — and grinning — by the end of your first session. Equipment provided, zero experience needed.</p>
+        <div class="price-meta"><span class="pill">Up to 4 players</span><span class="pill">1 hour</span><span class="pill">Gear provided</span></div>
+        <div class="price-row"><div class="amt">$150</div><a href="#visit" class="btn btn-sun">Book</a></div>
+      </div>
+      <div class="price-card rv">
+        <h3>Private Coaching</h3>
+        <p class="desc">Top one-on-one (or twos) coaching focused entirely on your game — identify gaps, build strengths, sharpen your third-shot drop.</p>
+        <div class="price-meta"><span class="pill">Up to 2 players</span><span class="pill">1 hour</span></div>
+        <div class="price-row"><div class="amt">$120</div><a href="#visit" class="btn btn-ghost-dark">Book</a></div>
+      </div>
+      <div class="price-card rv d1">
+        <h3>3 &amp; Me Coaching</h3>
+        <p class="desc">Bring a small crew and play with a coach — small-group instruction covering dinking, positioning, stacking and strategy.</p>
+        <div class="price-meta"><span class="pill">Up to 3 players</span><span class="pill">1 hour</span></div>
+        <div class="price-row"><div class="amt">$140</div><a href="#visit" class="btn btn-ghost-dark">Book</a></div>
+      </div>
     </div>
+    <!-- ▶ Point the "Book" buttons at your real booking system URL when ready (currently jump to Visit). ◀ -->
+    <p class="price-note">Prices are per session. Drop-ins welcome during open hours — see Visit for details.</p>
   </div>
 </section>
 
-<!-- ════════════════════ COACHING ════════════════════ -->
-<section class="sec on-court" id="coaching" aria-labelledby="coaching-h2">
-  <div class="wrap coach">
-    <div class="rv">
-      <p class="spec">Coaching</p>
-      <h2 class="h2" id="coaching-h2" style="margin:14px 0 22px;">Find the next shot.</h2>
-      <p class="lead">Our coaches care more about your third-shot drop than your membership tier. Wherever you're starting, there's a track built for you.</p>
-      <a href="#contact" class="btn btn-gold" style="margin-top:26px;">Book a session <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+<!-- ════════════════════ MEMBERSHIP ════════════════════ -->
+<section class="sec on-navy" id="membership" aria-labelledby="mem-h2">
+  <div class="wrap member">
+    <div class="rv on-navy">
+      <span class="eyebrow">Membership</span>
+      <h2 class="h2" id="mem-h2" style="margin:12px 0 22px;">Join the ohana</h2>
+      <p class="lead">Make OHANA your home court. Members play more, pay less, and get first dibs on courts, clinics and events.</p>
+      <ul class="member-list" style="margin-top:24px;">
+        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 10l4 4 8-9"/></svg> Member court rates &amp; priority booking</li>
+        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 10l4 4 8-9"/></svg> Discounted clinics &amp; coaching</li>
+        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 10l4 4 8-9"/></svg> Weekly organized play &amp; member socials</li>
+        <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 10l4 4 8-9"/></svg> ProShop member discounts</li>
+      </ul>
     </div>
-    <div class="coach-list rv d1">
-      <div class="coach-item"><span class="n">01</span><h3>Private Lessons</h3><p>One-on-one with a certified coach focused entirely on your game — gaps, strengths, a plan that fits your style.</p><div class="meta">All levels · 1-on-1</div></div>
-      <div class="coach-item"><span class="n">02</span><h3>Group Clinics</h3><p>Dinking, drops, positioning, stacking and strategy — learn alongside others and push each other forward.</p><div class="meta">Small groups · all levels</div></div>
-      <div class="coach-item"><span class="n">03</span><h3>Learn to Play</h3><p>Start from zero. By the end of session one you'll know the rules, hit the shots and be ready to rally. Gear provided.</p><div class="meta">Beginners · equipment provided</div></div>
-      <div class="coach-item"><span class="n">04</span><h3>Weekly Organized Play</h3><p>Regular coached sessions with fellow members — stay sharp, meet players at your level, keep improving.</p><div class="meta">Members · weekly</div></div>
+    <div class="member-cta rv d1">
+      <span class="eyebrow">Now Enrolling</span>
+      <!-- ▶ Membership tiers/prices TBD — confirm real plans with the club, then list them here.
+           No invented numbers go live. ◀ -->
+      <h3>Membership plans</h3>
+      <p>We're finalizing member plans for the season. Reach out and we'll share current tiers, rates and what's included — and get you on a court.</p>
+      <a href="#visit" class="btn btn-sun">Ask About Membership <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════ EVENTS ════════════════════ -->
-<section class="sec" id="events" aria-labelledby="events-h2">
+<section class="sec light" id="events" aria-labelledby="events-h2">
   <div class="wrap events">
-    <div class="rv" aria-hidden="true">
-      <div class="events-num">5<span class="cap">Dedicated event spaces</span></div>
-    </div>
-    <div class="rv d1">
-      <p class="spec">Private Events</p>
-      <h2 class="h2" id="events-h2" style="margin:14px 0 20px;">Host something the island remembers.</h2>
-      <p class="lead">Five dedicated spaces inside a world-class Kaʻanapali facility. Corporate days, team building, private parties, social tournaments — OHANA turns a gathering into the story people tell after they fly home.</p>
+    <div class="rv d1 light" style="order:2;">
+      <span class="eyebrow">Private Events</span>
+      <h2 class="h2" id="events-h2" style="margin:12px 0 18px;">Host something the island remembers</h2>
+      <p class="lead">Five dedicated spaces inside a world-class Kaʻanapali facility. Corporate days, team building, private parties and social tournaments — OHANA turns a gathering into the story people tell after they fly home.</p>
       <div class="events-types"><span>Corporate Events</span><span>Team Building</span><span>Private Parties</span><span>Group Tournaments</span></div>
-      <a href="#contact" class="btn btn-line-dark">Plan your event</a>
+      <a href="#visit" class="btn btn-ghost-dark">Plan Your Event</a>
     </div>
+    <div class="photo events-photo rv" role="img" aria-label="Covered courts ready for a private event under the wave murals" style="order:1;"><span class="tag">Five Event Spaces</span></div>
   </div>
 </section>
 
 <!-- ════════════════════ STORY ════════════════════ -->
-<section class="sec on-court" id="story" aria-labelledby="story-h2">
+<section class="sec on-navy" id="story" aria-labelledby="story-h2">
   <div class="wrap story">
-    <div class="story-body rv">
-      <p class="spec">Our Story</p>
-      <h2 class="h2" id="story-h2" style="margin:14px 0 24px;">Built by a family.<br>For the ohana.</h2>
+    <div class="story-body rv on-navy">
+      <span class="eyebrow">Our Story</span>
+      <h2 class="h2" id="story-h2" style="margin:12px 0 22px;">Built by a family,<br>for the ohana</h2>
       <p class="lead">OHANA wasn't built by a corporation. It was built by Pat, Jen and their sons Reid and Clay — a family that packed up, moved to Maui, and spent a year making something they believe in.</p>
-      <p class="lead">Pat Rolfes is a pickleball pioneer: he helped grow Newport Beach from four cracked courts to thirty-one, backed MLP and DUPR at the start, and founded The HUB across multiple cities. Maui is the personal one — built to help a community still recovering from the 2023 Lahaina fire.</p>
-      <a href="#contact" class="btn btn-line-light" style="margin-top:8px;">Get in touch</a>
+      <p class="lead">Pat Rolfes is a pickleball pioneer: he grew Newport Beach from four cracked courts to thirty-one, backed MLP and DUPR at the start, and founded The HUB across multiple cities. Maui is the personal one — built to help a community still recovering from the 2023 Lahaina fire.</p>
     </div>
     <div class="story-quote rv d1">
-      <span class="mark" aria-hidden="true">“</span>
       <blockquote>Our mission has always been to build communities through pickleball. We now consider the Hawaiians and Tongans who helped build this family as well.</blockquote>
       <div class="by">Pat Rolfes — Founder, OHANA Pickleball Club</div>
       <div class="timeline" role="list" aria-label="Founder milestones">
-        <div class="tl" role="listitem"><span class="yr">2018</span><span class="tx">Newport Beach: 4 cracked courts → 31, 1,500+ members.</span></div>
+        <div class="tl" role="listitem"><span class="yr">2018</span><span class="tx">Grew Newport Beach from 4 cracked courts to 31, 1,500+ members.</span></div>
         <div class="tl" role="listitem"><span class="yr">2019</span><span class="tx">Early in MLP &amp; DUPR. Co-founded PickleballSuperstore. Trademarked the World Series of Pickleball.</span></div>
         <div class="tl" role="listitem"><span class="yr">2021</span><span class="tx">Built The HUB — Silicon Valley, Alameda, San Diego, Jacksonville.</span></div>
         <div class="tl" role="listitem"><span class="yr">2025</span><span class="tx">Moved to Maui. Built OHANA for a community rebuilding after the fire.</span></div>
@@ -620,66 +536,41 @@
   </div>
 </section>
 
-<!-- ════════════════════ MEMBERSHIP — rate card ════════════════════ -->
-<section class="sec on-court" id="membership" aria-labelledby="mem-h2" style="background:var(--court-2);">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="spec">Membership</p>
-      <h2 class="h2" id="mem-h2">Join the ohana.</h2>
-    </div>
-    <div class="rates rv d1">
-      <div class="rate">
-        <div class="rate-name">Day Pass<span class="badge">Drop-in</span></div>
-        <div class="rate-feats">Full court access · open play · ProShop · rentals available</div>
-        <div class="rate-price"><b>$25</b><span>per session</span></div>
-        <a href="#contact" class="btn btn-line-light">Get a pass</a>
-      </div>
-      <div class="rate feat">
-        <div class="rate-name">Member<span class="badge">Most popular</span></div>
-        <div class="rate-feats">Unlimited open play · priority booking · discounted clinics · member socials &amp; weekly play</div>
-        <div class="rate-price"><b>$99</b><span>per month</span></div>
-        <a href="#contact" class="btn btn-gold">Join</a>
-      </div>
-      <div class="rate">
-        <div class="rate-name">Annual<span class="badge">Best value</span></div>
-        <div class="rate-feats">All member benefits · locked rate · two guest passes monthly · intro lesson · priority events</div>
-        <div class="rate-price"><b>$899</b><span>per year</span></div>
-        <a href="#contact" class="btn btn-line-light">Go annual</a>
-      </div>
-    </div>
-    <!-- ▶ Pricing is illustrative placeholder — confirm real rates before launch. ◀ -->
-    <p class="rate-note">Rates shown are illustrative — contact us for current pricing.</p>
-  </div>
-</section>
-
-<!-- ════════════════════ CONTACT / CLOSE ════════════════════ -->
-<section class="sec on-court" id="contact" aria-labelledby="contact-h2">
-  <div class="wrap contact">
-    <div class="contact-cta rv">
-      <p class="spec">Find the court</p>
-      <h2 id="contact-h2">Come play with us.</h2>
-      <p class="lead">Inside Hyatt Regency Maui at Kaʻanapali Beach Resort. Drop in, or reach out and we'll set you up.</p>
+<!-- ════════════════════ VISIT ════════════════════ -->
+<section class="sec on-navy" id="visit" aria-labelledby="visit-h2" style="background:var(--navy-2);">
+  <div class="wrap visit">
+    <div class="rv on-navy">
+      <span class="eyebrow">Find Us</span>
+      <h2 class="h2" id="visit-h2">Come play with us</h2>
+      <p class="lead" style="margin-top:14px;">Inside Hyatt Regency Maui at Kaʻanapali Beach Resort. Drop in during open hours, or reach out and we'll set you up.</p>
       <div class="info">
         <div class="info-row"><span class="info-k">Address</span><span class="info-v">200 Nohea Kai Drive, Lahaina, HI 96761<br><small>Inside Hyatt Regency Maui Resort &amp; Spa</small></span></div>
-        <!-- ▶ Confirm phone before launch. ◀ -->
+        <!-- ▶ Confirm phone/email are current. ◀ -->
         <div class="info-row"><span class="info-k">Phone</span><span class="info-v"><a href="tel:+18086674449">(808) 667-4449</a></span></div>
-        <!-- ▶ Confirm email before launch. ◀ -->
         <div class="info-row"><span class="info-k">Email</span><span class="info-v"><a href="mailto:maui@ohanapbc.com">maui@ohanapbc.com</a></span></div>
         <div class="info-row"><span class="info-k">Social</span><span class="info-v"><a href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener">@ohanapickleballclub</a></span></div>
       </div>
-      <a href="https://maps.google.com/?q=200+Nohea+Kai+Drive+Lahaina+HI+96761" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Get directions <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+      <a href="https://maps.google.com/?q=200+Nohea+Kai+Drive+Lahaina+HI+96761" target="_blank" rel="noopener noreferrer" class="btn btn-sun">Get Directions <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
     </div>
     <div class="rv d1">
       <div class="hours">
-        <div class="hours-h">Hours of operation</div>
-        <div class="hours-r"><span class="d">Mon – Fri</span><span class="t">8am–1pm · 3pm–9pm</span></div>
+        <h3 class="hours-h">Our Hours</h3>
         <div class="hours-r"><span class="d">Saturday</span><span class="t">8am – 9pm</span></div>
+        <div class="hours-r"><span class="d">Mon – Fri</span><span class="t">8am–1pm · 3pm–9pm<br><span class="closed">(closed 1–3pm)</span></span></div>
         <div class="hours-r"><span class="d">Sunday</span><span class="t">8am – 1pm</span></div>
-        <div class="hours-r"><span class="d">Midday</span><span class="t dim">Mon–Fri 1–3pm closed</span></div>
       </div>
       <div class="park">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="1" y="5" width="16" height="10" rx="2"/><circle cx="5" cy="10" r="2"/><circle cx="13" cy="10" r="2"/><line x1="3" y1="5" x2="3" y2="2"/><line x1="15" y1="5" x2="15" y2="2"/><line x1="7" y1="10" x2="11" y2="10"/></svg>
-        <p><strong>Free parking:</strong> enter the front lot, pull a ticket, park back right. Walk the bridge, turn right. Validate free at the ProShop.</p>
+        <div class="park-map" role="img" aria-label="Aerial map: park behind the walking bridge near the Hyatt, between Kaʻanapali Pkwy and Hwy 30"></div>
+        <div class="park-body">
+          <span class="eyebrow">Free Validated Parking</span>
+          <ol class="park-steps">
+            <li>Enter the front parking lot and pull a ticket.</li>
+            <li>Park in the back, right-hand side of the lot.</li>
+            <li>Walk over the walking bridge.</li>
+            <li>Turn right and walk down the path.</li>
+            <li>Bring your ticket for free validation at the ProShop.</li>
+          </ol>
+        </div>
       </div>
     </div>
   </div>
@@ -691,16 +582,16 @@
 <footer>
   <div class="foot-top">
     <div>
-      <div class="foot-name">OHANA Pickleball Club</div>
+      <div class="foot-name">OHANA Pickleball</div>
       <div class="foot-tag">Play With Aloha · Kaʻanapali, Maui</div>
       <div class="foot-soc">
-        <a href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="4"/><circle cx="13.2" cy="4.8" r="0.9" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://facebook.com/Ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Facebook"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="16" height="16" rx="4"/><path d="M12 6h-2a1 1 0 0 0-1 1v2h3l-.5 2.5H9V17"/></svg></a>
+        <a href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="4"/><circle cx="13.2" cy="4.8" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://facebook.com/Ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Facebook"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="16" height="16" rx="4"/><path d="M12 6h-2a1 1 0 0 0-1 1v2h3l-.5 2.5H9V17"/></svg></a>
       </div>
     </div>
-    <div class="foot-col"><h2>Play</h2><ul><li><a href="#play">Day Passes</a></li><li><a href="#play">Open Play</a></li><li><a href="#play">Court Rental</a></li><li><a href="#play">Learn to Play</a></li></ul></div>
-    <div class="foot-col"><h2>Club</h2><ul><li><a href="#courts">The Courts</a></li><li><a href="#coaching">Coaching</a></li><li><a href="#events">Private Events</a></li><li><a href="#membership">Membership</a></li></ul></div>
-    <div class="foot-col"><h2>Visit</h2><ul><li><a href="tel:+18086674449">(808) 667-4449</a></li><li><a href="mailto:maui@ohanapbc.com">maui@ohanapbc.com</a></li><li><a href="#contact">Hours</a></li><li><a href="#contact">Directions</a></li></ul></div>
+    <div class="foot-col"><h2>Play</h2><ul><li><a href="#play">Court Rental</a></li><li><a href="#play">Learn to Play</a></li><li><a href="#play">Coaching</a></li><li><a href="#membership">Membership</a></li></ul></div>
+    <div class="foot-col"><h2>Club</h2><ul><li><a href="#courts">The Courts</a></li><li><a href="#events">Private Events</a></li><li><a href="#story">Our Story</a></li><li><a href="#visit">Visit</a></li></ul></div>
+    <div class="foot-col"><h2>Contact</h2><ul><li><a href="tel:+18086674449">(808) 667-4449</a></li><li><a href="mailto:maui@ohanapbc.com">maui@ohanapbc.com</a></li><li><a href="#visit">Hours</a></li><li><a href="#visit">Directions</a></li></ul></div>
   </div>
   <div class="foot-bot">
     <span>© 2025 OHANA Pickleball Club – Maui. All rights reserved.</span>
@@ -711,8 +602,6 @@
 <script>
   (function () {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    /* Reveals */
     var rv = document.querySelectorAll('.rv');
     if (reduce || !('IntersectionObserver' in window)) {
       rv.forEach(function (el) { el.classList.add('in'); });
@@ -723,39 +612,36 @@
       rv.forEach(function (el) { io.observe(el); });
     }
 
-    /* Mobile drawer */
     var burger = document.querySelector('.burger'), drawer = document.getElementById('drawer');
     function close(){ burger.setAttribute('aria-expanded','false'); burger.setAttribute('aria-label','Open menu'); drawer.style.display='none'; }
-    burger.addEventListener('click', function(){
+    burger.addEventListener('click', function () {
       var open = burger.getAttribute('aria-expanded') === 'true';
       burger.setAttribute('aria-expanded', String(!open));
       burger.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
       drawer.style.display = open ? 'none' : 'block';
     });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 
-    /* Smooth-scroll + close drawer */
-    document.querySelectorAll('a[href^="#"]').forEach(function(a){
-      a.addEventListener('click', function(e){
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
         var id = a.getAttribute('href'); if (id.length < 2) return;
         var t = document.querySelector(id);
         if (t) { e.preventDefault(); t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); close(); }
       });
     });
 
-    /* Nav active state */
     var links = document.querySelectorAll('.nav-links a:not(.nav-cta)');
     if ('IntersectionObserver' in window) {
-      var sio = new IntersectionObserver(function(es){
-        es.forEach(function(e){
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
           if (e.isIntersecting) {
-            links.forEach(function(l){ l.classList.remove('active'); });
+            links.forEach(function (l) { l.classList.remove('active'); });
             var m = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
             if (m) m.classList.add('active');
           }
         });
       }, { rootMargin: '-50% 0px -50% 0px' });
-      document.querySelectorAll('main section[id]').forEach(function(s){ sio.observe(s); });
+      document.querySelectorAll('main section[id]').forEach(function (s) { sio.observe(s); });
     }
   })();
 </script>
