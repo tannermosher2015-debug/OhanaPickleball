@@ -261,13 +261,8 @@
     .hours-r .d { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-navy-soft); }
     .hours-r .t { font-size: 13px; color: var(--on-navy); font-weight: 500; text-align: right; }
     .hours-r .t .closed { color: var(--court); }
-    .park { margin-top: 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--line-navy); border-radius: var(--r); overflow: hidden; }
-    .park-map { min-height: 220px; background-image: linear-gradient(140deg, rgba(41,169,225,0.4), rgba(23,58,108,0.9)), url('img/parking-map.png'); background-size: cover; background-position: center; }
-    .park-body { padding: 20px 22px; }
-    .park-body .eyebrow { color: var(--sun); margin-bottom: 12px; }
-    .park-steps { list-style: none; counter-reset: p; display: grid; gap: 11px; }
-    .park-steps li { counter-increment: p; display: grid; grid-template-columns: 26px 1fr; gap: 12px; font-size: 0.92rem; color: var(--on-navy-soft); line-height: 1.45; }
-    .park-steps li::before { content: counter(p); font-family: var(--f-mono); font-size: 11px; font-weight: 500; color: var(--navy); background: var(--sun); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .park { margin-top: 16px; }
+    .park img { width: 100%; height: auto; display: block; border-radius: var(--r); border: 1px solid var(--line-navy); }
 
     /* ──────── FOOTER ──────── */
     footer { background: var(--navy-2); padding: clamp(44px,6vw,68px) clamp(18px,4vw,40px) 30px; }
@@ -554,19 +549,10 @@
         <div class="hours-r"><span class="d">Mon – Fri</span><span class="t">8am–1pm · 3pm–9pm<br><span class="closed">(closed 1–3pm)</span></span></div>
         <div class="hours-r"><span class="d">Sunday</span><span class="t">8am – 1pm</span></div>
       </div>
-      <div class="park">
-        <div class="park-map" role="img" aria-label="Aerial map: park behind the walking bridge near the Hyatt, between Kaʻanapali Pkwy and Hwy 30"></div>
-        <div class="park-body">
-          <span class="eyebrow">Free Validated Parking</span>
-          <ol class="park-steps">
-            <li>Enter the front parking lot and pull a ticket.</li>
-            <li>Park in the back, right-hand side of the lot.</li>
-            <li>Walk over the walking bridge.</li>
-            <li>Turn right and walk down the path.</li>
-            <li>Bring your ticket for free validation at the ProShop.</li>
-          </ol>
-        </div>
-      </div>
+      <figure class="park">
+        <img src="img/parking-map.png" width="2000" height="1429" loading="lazy"
+             alt="Free validated parking. Enter the front parking lot and pull a ticket; park in the back, right-hand side of the lot; walk over the walking bridge; turn right and walk down the path; bring your ticket for free validation at the ProShop. The map shows the lot by the walking bridge near the Hyatt Regency, between Kaʻanapali Parkway and Highway 30.">
+      </figure>
     </div>
   </div>
 </section>
