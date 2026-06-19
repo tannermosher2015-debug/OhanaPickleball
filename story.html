@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story | OHANA Pickleball Club – Maui</title>
+  <meta name="description" content="From a silver medal at Indian Wells to twelve courts at Kaʻanapali — the Rolfes family story behind OHANA Pickleball Club, Maui. Built by family, for the ohana.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Our Story — OHANA Pickleball Club, Maui">
+  <meta property="og:description" content="How the Rolfes family went from four cracked courts in Newport Beach to twelve under the Kaʻanapali sun.">
+  <meta property="og:image" content="https://ohana-pickleball.vercel.app/img/group.webp">
+  <meta property="og:url" content="https://ohana-pickleball.vercel.app/story.html">
+  <meta name="theme-color" content="#173A6C">
+  <link rel="icon" type="image/png" href="img/logo-mark.png">
+  <link rel="apple-touch-icon" href="img/logo-mark.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:#173A6C; --court:#29A9E1; --sun:#FFC629; --white:#FFFFFF; --mist:#EAF1F8;
+      --ink:#112A4F; --muted:#45566F; --navy-2:#0F2A52; --line:#D7E1EC;
+      --on-navy:rgba(255,255,255,0.92); --on-navy-soft:rgba(255,255,255,0.66); --on-navy-dim:rgba(255,255,255,0.50); --line-navy:rgba(255,255,255,0.14);
+      --f-disp:'Archivo',system-ui,sans-serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'DM Mono',ui-monospace,monospace;
+      --maxw:1280px; --ease:cubic-bezier(0.22,1,0.36,1); --r:16px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--f-body);font-size:1.0625rem;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+    img,svg{display:block;max-width:100%;}
+    a{color:inherit;}
+    ::selection{background:var(--sun);color:var(--navy);}
+    .skip-nav{position:absolute;top:-120%;left:16px;z-index:9999;background:var(--sun);color:var(--navy);padding:12px 20px;border-radius:0 0 10px 10px;font-weight:800;font-size:14px;text-decoration:none;transition:top 0.12s;}
+    .skip-nav:focus{top:0;}
+    :focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:5px;}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(23,58,108,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.12);}
+    .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px);display:flex;align-items:center;justify-content:space-between;min-height:72px;}
+    .brand{display:flex;align-items:center;text-decoration:none;}
+    .brand-logo{height:54px;width:auto;display:block;background:#fff;border-radius:10px;padding:5px 11px;box-shadow:0 2px 10px rgba(0,0,0,0.18);}
+    .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+    .nav-links a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--on-navy-soft);text-decoration:none;padding:10px 12px;border-radius:7px;transition:color 0.15s,background 0.15s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);}
+    .nav-cta{background:var(--sun);color:var(--navy)!important;font-weight:800;border-radius:100px;padding:10px 22px!important;margin-left:8px;transition:filter 0.15s,transform 0.15s;}
+    .nav-cta:hover{filter:brightness(1.05);transform:translateY(-1px);}
+    .burger{display:none;width:44px;height:44px;background:none;border:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+    .burger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform 0.25s var(--ease),opacity 0.2s;}
+    .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .drawer{display:none;background:var(--navy);border-top:1px solid rgba(255,255,255,0.10);padding:8px clamp(18px,4vw,40px) 22px;}
+    .drawer ul{list-style:none;}
+    .drawer a{display:flex;align-items:center;min-height:50px;font-family:var(--f-mono);font-size:13px;letter-spacing:0.07em;text-transform:uppercase;color:var(--on-navy);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .drawer a.dr-cta{margin-top:14px;min-height:54px;justify-content:center;background:var(--sun);color:var(--navy);border:none;border-radius:100px;font-weight:800;}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;gap:9px;min-height:52px;padding:15px 30px;border-radius:100px;font-family:var(--f-disp);font-weight:800;font-size:14px;letter-spacing:0.02em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:transform 0.18s var(--ease),filter 0.18s,background 0.2s,color 0.2s,border-color 0.2s;}
+    .btn:hover{transform:translateY(-2px);}
+    .btn svg{transition:transform 0.2s var(--ease);}
+    .btn:hover svg{transform:translateX(4px);}
+    .btn-sun{background:var(--sun);color:var(--navy);}
+    .btn-sun:hover{filter:brightness(1.05);}
+    .btn-ghost-light{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);}
+    .btn-ghost-light:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+    .btn-ghost-dark{background:transparent;color:var(--navy);border:2px solid var(--navy);}
+    .btn-ghost-dark:hover{background:var(--navy);color:#fff;}
+
+    /* HEADER */
+    @keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+    .story-head{position:relative;background:var(--navy);overflow:hidden;padding:clamp(64px,9vw,128px) clamp(18px,4vw,40px) clamp(52px,7vw,96px);}
+    .story-head::before{content:'';position:absolute;inset:0;background:radial-gradient(70% 70% at 85% -10%,rgba(41,169,225,0.28),transparent 60%);pointer-events:none;}
+    .story-head-in{position:relative;z-index:1;max-width:860px;margin:0 auto;}
+    .back-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-navy-soft);text-decoration:none;margin-bottom:26px;transition:color 0.15s;}
+    .back-link:hover{color:var(--sun);}
+    .story-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sun);margin-bottom:20px;}
+    .story-eyebrow::before{content:'';width:34px;height:2px;background:var(--sun);}
+    .story-head h1{font-family:var(--f-disp);font-weight:900;font-size:clamp(3rem,8vw,6.5rem);line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;color:#fff;margin-bottom:22px;}
+    .story-head h1 em{font-style:normal;color:var(--sun);}
+    .story-head p{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--on-navy-soft);line-height:1.6;max-width:52ch;}
+
+    /* milestones strip */
+    .miles{background:var(--navy-2);}
+    .miles-in{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
+    .mile{padding:22px 12px;border-right:1px solid var(--line-navy);}
+    .mile:last-child{border-right:none;}
+    .mile b{display:block;font-family:var(--f-disp);font-weight:900;font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--sun);line-height:1;}
+    .mile span{display:block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--on-navy-dim);margin-top:6px;line-height:1.4;}
+
+    /* PROSE */
+    @media (prefers-reduced-motion:no-preference){.js .rv{opacity:0;transform:translateY(16px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease);}.js .rv.in{opacity:1;transform:none;}}
+    .prose{max-width:720px;margin:0 auto;padding:clamp(52px,7vw,96px) clamp(18px,4vw,40px);}
+    .prose .lead{font-size:clamp(1.25rem,2.1vw,1.55rem);line-height:1.55;color:var(--navy);font-weight:500;margin-bottom:30px;}
+    .prose p{font-size:1.14rem;line-height:1.85;color:var(--ink);margin-bottom:24px;}
+    .prose strong{color:var(--navy);font-weight:600;}
+    .era{margin:54px 0 20px;}
+    .era .yr{display:block;font-family:var(--f-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#155F88;margin-bottom:9px;}
+    .era h2{font-family:var(--f-disp);font-weight:900;font-size:clamp(1.5rem,3vw,2.15rem);color:var(--navy);text-transform:uppercase;letter-spacing:-0.015em;line-height:1;}
+    .callout{border-left:3px solid var(--sun);background:var(--mist);border-radius:0 12px 12px 0;padding:20px 24px;font-family:var(--f-disp);font-weight:700;font-size:clamp(1.15rem,2vw,1.4rem);color:var(--navy);line-height:1.32;margin:30px 0;}
+    .pullquote{font-family:var(--f-disp);font-weight:800;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.12;color:var(--navy);text-transform:uppercase;letter-spacing:-0.02em;text-align:center;margin:54px 0;}
+    .pullquote em{font-style:normal;color:#155F88;}
+    .signature{margin-top:52px;padding-top:30px;border-top:1px solid var(--line);}
+    .signature .mahalo{font-family:var(--f-disp);font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;letter-spacing:-0.01em;}
+    .signature .who{font-family:var(--f-disp);font-weight:700;font-size:1.15rem;color:var(--navy);margin-top:6px;}
+    .signature .who small{display:block;font-family:var(--f-body);font-weight:400;font-size:0.95rem;color:var(--muted);margin-top:4px;}
+
+    /* full-width photo bands */
+    .story-band{position:relative;margin:0;height:clamp(260px,42vw,520px);background:var(--navy) center/cover no-repeat;}
+    .story-band::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,42,82,0.55));}
+    .story-band figcaption{position:absolute;left:0;bottom:0;z-index:1;padding:24px clamp(18px,4vw,40px);max-width:var(--maxw);margin:0 auto;left:0;right:0;font-family:var(--f-mono);font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:9px;}
+    .story-band figcaption::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--sun);flex-shrink:0;}
+
+    /* CTA band */
+    .cta{background:var(--navy);text-align:center;padding:clamp(56px,8vw,104px) clamp(18px,4vw,40px);}
+    .cta .story-eyebrow{justify-content:center;}
+    .cta h2{font-family:var(--f-disp);font-weight:900;font-size:clamp(2rem,5vw,3.6rem);line-height:0.98;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;margin:6px auto 18px;max-width:18ch;}
+    .cta p{color:var(--on-navy-soft);font-size:1.1rem;line-height:1.6;max-width:46ch;margin:0 auto 30px;}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;}
+
+    /* FOOTER */
+    footer{background:var(--navy-2);padding:clamp(44px,6vw,68px) clamp(18px,4vw,40px) 30px;}
+    .foot-top{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:38px;padding-bottom:36px;margin-bottom:22px;border-bottom:1px solid var(--line-navy);}
+    .foot-name{font-family:var(--f-disp);font-weight:900;font-size:21px;color:#fff;text-transform:uppercase;margin-bottom:5px;}
+    .foot-tag{font-family:var(--f-mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sun);margin-bottom:18px;}
+    .foot-soc{display:flex;gap:10px;}
+    .foot-soc a{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;color:var(--on-navy-soft);text-decoration:none;transition:background 0.2s,color 0.2s;}
+    .foot-soc a:hover{background:var(--sun);color:var(--navy);}
+    .foot-col h2{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-navy-dim);margin-bottom:15px;}
+    .foot-col ul{list-style:none;display:grid;gap:2px;}
+    .foot-col a{display:inline-flex;align-items:center;min-height:36px;font-size:14px;color:var(--on-navy-soft);text-decoration:none;transition:color 0.15s;}
+    .foot-col a:hover{color:#fff;}
+    .foot-bot{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .foot-bot span{font-size:12.5px;color:var(--on-navy-dim);}
+    .foot-bot a{color:var(--sun);text-decoration:none;opacity:0.8;}.foot-bot a:hover{opacity:1;}
+
+    @media (max-width:920px){
+      .nav-links{display:none;}
+      .burger{display:flex;}
+      .foot-top{grid-template-columns:1fr 1fr;gap:28px;}
+    }
+    @media (max-width:540px){
+      body{font-size:16px;}
+      .miles-in{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .mile:nth-child(2){border-right:none;}
+      .mile:nth-child(3),.mile:nth-child(4){border-top:1px solid var(--line-navy);}
+      .cta-actions{flex-direction:column;}.cta-actions .btn{width:100%;justify-content:center;}
+      .foot-top{grid-template-columns:1fr;gap:24px;}
+      .foot-bot{flex-direction:column;}
+    }
+  </style>
+  <script>document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<a href="#main" class="skip-nav">Skip to main content</a>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <div class="nav-in">
+      <a href="index.html" class="brand" aria-label="OHANA Pickleball Club — home">
+        <img class="brand-logo" src="img/logo.png" width="457" height="217" alt="OHANA Pickleball Club — Maui">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#courts">Courts</a></li>
+        <li><a href="index.html#play">Play &amp; Train</a></li>
+        <li><a href="index.html#membership">Membership</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="story.html" class="active" aria-current="page">Story</a></li>
+        <li><a href="index.html#visit">Visit</a></li>
+        <li><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="nav-cta">Book a Court</a></li>
+      </ul>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+    </div>
+    <div class="drawer" id="drawer">
+      <ul>
+        <li><a href="index.html#courts">Courts</a></li>
+        <li><a href="index.html#play">Play &amp; Train</a></li>
+        <li><a href="index.html#membership">Membership</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="story.html" aria-current="page">Story</a></li>
+        <li><a href="index.html#visit">Visit</a></li>
+        <li><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="dr-cta">Book a Court</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HEADER -->
+<section class="story-head" aria-labelledby="story-h1">
+  <div class="story-head-in">
+    <a href="index.html" class="back-link">← Back to home</a>
+    <span class="story-eyebrow">Our Story · Kaʻanapali, Maui</span>
+    <h1 id="story-h1">What a <em>ride.</em></h1>
+    <p>From a surprise silver medal at Indian Wells to twelve courts under the Kaʻanapali sun — how the Rolfes family built OHANA Pickleball Club, Maui.</p>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<div class="miles" role="region" aria-label="Story milestones">
+  <div class="miles-in">
+    <div class="mile"><b>2018</b><span>Newport Beach begins</span></div>
+    <div class="mile"><b>2021</b><span>The HUB Pickleball</span></div>
+    <div class="mile"><b>2025</b><span>OHANA Maui · Phase One</span></div>
+    <div class="mile"><b>2026</b><span>Full 12-court facility</span></div>
+  </div>
+</div>
+
+<!-- PROSE -->
+<article class="prose">
+  <p class="lead rv">I'll start by saying: what a ride. Jennifer and I were first introduced to pickleball by her father while he was visiting us from Texas. After leaving for a couple of days to go to Indian Wells, he came home with a silver medal in the 2018 USAP National Championship.</p>
+
+  <div class="callout rv">“Silver medal? Nationals? Pickleball? What's pickleball?” And so the journey began…</div>
+
+  <div class="era rv"><span class="yr">2018 · Newport Beach</span><h2>Four cracked courts</h2></div>
+  <p class="rv">With our three children — Reid, Emery and Clay — away in college, I started to sell off pieces of my 35+ year-old manufacturing company, Cafejo, which I'd started in 1989. Thinking we were headed down a “semi-retirement” path, Jennifer and I joined the local tennis club across the street (Members #24 and #25). It had four less-than-perfect pickleball courts, and we started to play — and travel — for pickleball.</p>
+  <p class="rv">Like most who play the game, we fell in love with it. We began building a community around those four Newport Beach courts and soon found ourselves running leagues, organizing play and creating social events. I helped the club build more courts to support the community we were creating — and to help the struggling club. Once there were four, there were now twelve. Newport was on its way.</p>
+
+  <div class="era rv"><span class="yr">Newport Beach Pickleball Events</span><h2>One of the largest in the country</h2></div>
+  <p class="rv">At that point I figured I'd done my good deed, and the club's operator now had enough pickleball business to support a Director of Pickleball. Instead, he asked me to stay. Not wanting a job, I came up with a win/win: with the club and the two smart, hard-working women who'd helped build it from the beginning, we started <strong>Newport Beach Pickleball Events LLC</strong>.</p>
+  <p class="rv">We grew the club to over <strong>1,500 members</strong> and ran a profitable events company that fit a huge demand. We kept expanding — building out a total of <strong>31 pickleball courts</strong> and a restaurant, which my sons Reid and Clay helped build. We became one of the largest pickleball clubs in the country, running huge tournaments and hosting the PPA, MLP and APP. Those were fun times, for sure.</p>
+
+  <div class="era rv"><span class="yr">The business of pickleball</span><h2>An entrepreneur's playground</h2></div>
+  <p class="rv">It was very early in the business of pickleball, and I saw it as an entrepreneur's playground. Jennifer and I invested in MLP (Major League Pickleball) and DUPR (the Dynamic Universal Pickleball Rating system). I co-founded and was Chairman of the Board of PickleballSuperstore.com. I trademarked and sold the World Series of Pickleball to Andre Agassi for shares in his company. And I helped shape the USAP National Championship by creating the Golden Ticket National Qualifiers — I ran the first one in Newport Beach, ran it for two years, and sold the rights to the APP, who still runs it today.</p>
+</article>
+
+<!-- BAND: play action -->
+<figure class="story-band rv" style="background-image:url('img/play-action.webp')" role="img" aria-label="Players rallying on an OHANA court beneath the wave murals">
+  <figcaption>Open play, OHANA · Kaʻanapali</figcaption>
+</figure>
+
+<article class="prose">
+  <div class="era rv"><span class="yr">2021 · The HUB</span><h2>From abandoned courts to a brand</h2></div>
+  <p class="rv">In 2021, a pickleball friend and I found an abandoned tennis facility in San Diego and developed and operated the first <strong>HUB Pickleball</strong>. Over the next four years we strategically found property to develop and manage three more HUBs: Silicon Valley, Alameda and Jacksonville. Today, The HUB Pickleball is one of the most respected brands in the industry.</p>
+
+  <div class="era rv"><span class="yr">2025 · Maui</span><h2>We packed our bags</h2></div>
+  <p class="rv">In 2025, I found an opportunity to build a club in Maui. With family ties to Lahaina — and believing pickleball can help a community still recovering from the 2023 fire — Jennifer and I packed our bags and moved to Maui to build a club and give “semi-retirement” another try.</p>
+  <p class="rv">Our sons came with us. After a month, Reid went back to help run The HUB – Silicon Valley, but Clay gave up his manager job at The HUB – San Diego to move to Maui and build — and now manage — the club we built together. In January 2026, Reid moved to Maui too, to help build and run the club.</p>
+
+  <div class="pullquote rv">OHANA Maui was <em>literally</em> created by family.</div>
+</article>
+
+<!-- BAND: group -->
+<figure class="story-band rv" style="background-image:url('img/group.webp')" role="img" aria-label="The OHANA pickleball community — dozens of players gathered on court under the lights">
+  <figcaption>Club night · the OHANA ohana</figcaption>
+</figure>
+
+<article class="prose">
+  <div class="era rv"><span class="yr">Created by family</span><h2>Join our ohana</h2></div>
+  <p class="rv">We now consider some of the Hawaiians and Tongans who helped build it family as well. We officially opened <strong>Phase One on September 1, 2025</strong>, and the rest of this beautiful twelve-court facility opened in <strong>January 2026</strong>.</p>
+  <p class="rv">Like I said — what a ride. And it's not over. We look forward to having you and your ohana join our pickleball ohana here in Kaʻanapali, Maui.</p>
+
+  <div class="signature rv">
+    <div class="mahalo">Mahalo,</div>
+    <div class="who">Rolfes Ohana<small>Pat, Jen, Reid, Emery &amp; Clay</small></div>
+  </div>
+</article>
+
+</main>
+
+<!-- CTA -->
+<section class="cta" aria-labelledby="cta-h2">
+  <span class="story-eyebrow">Play With Aloha</span>
+  <h2 id="cta-h2">Come play with us</h2>
+  <p>Twelve covered courts at Hyatt Regency Maui. Drop in during open hours, or book a court online.</p>
+  <div class="cta-actions">
+    <a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-sun">Book a Court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+    <a href="index.html#visit" class="btn btn-ghost-light">Hours &amp; Directions</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-name">OHANA Pickleball</div>
+      <div class="foot-tag">Play With Aloha · Kaʻanapali, Maui</div>
+      <div class="foot-soc">
+        <a href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="4"/><circle cx="13.2" cy="4.8" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://facebook.com/Ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col"><h2>Play</h2><ul><li><a href="index.html#play">Court Rental</a></li><li><a href="index.html#play">Learn to Play</a></li><li><a href="index.html#play">Coaching</a></li><li><a href="index.html#membership">Membership</a></li></ul></div>
+    <div class="foot-col"><h2>Club</h2><ul><li><a href="index.html#courts">The Courts</a></li><li><a href="index.html#events">Private Events</a></li><li><a href="story.html">Our Story</a></li><li><a href="index.html#visit">Visit</a></li></ul></div>
+    <div class="foot-col"><h2>Contact</h2><ul><li><a href="tel:+18086674449">(808) 667-4449</a></li><li><a href="mailto:maui@ohanapbc.com">maui@ohanapbc.com</a></li><li><a href="index.html#visit">Hours</a></li><li><a href="index.html#visit">Directions</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2025 OHANA Pickleball Club – Maui. All rights reserved.</span>
+    <span>Design by <a href="https://frontlinewebdesign.tech" target="_blank" rel="noopener">Frontline Web Design</a></span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var rv = document.querySelectorAll('.rv');
+    if (reduce || !('IntersectionObserver' in window)) { rv.forEach(function(el){el.classList.add('in');}); }
+    else {
+      var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+      rv.forEach(function(el){io.observe(el);});
+    }
+    var burger = document.querySelector('.burger'), drawer = document.getElementById('drawer');
+    function close(){burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu');drawer.style.display='none';}
+    burger.addEventListener('click',function(){var open=burger.getAttribute('aria-expanded')==='true';burger.setAttribute('aria-expanded',String(!open));burger.setAttribute('aria-label',open?'Open menu':'Close menu');drawer.style.display=open?'none':'block';});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  })();
+</script>
+</body>
+</html>
