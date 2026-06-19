@@ -197,7 +197,7 @@
     /* ──────── COURTS ──────── */
     .courts-gallery { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; margin-bottom: clamp(32px,4vw,52px); }
     .courts-gallery .photo:nth-child(1) { grid-row: 1 / 3; min-height: 420px; background-image: linear-gradient(140deg, rgba(41,169,225,0.45), rgba(23,58,108,0.9)), url('img/court-aloha.jpg'); }
-    .courts-gallery .photo:nth-child(2) { min-height: 200px; background-image: linear-gradient(140deg, rgba(41,169,225,0.5), rgba(23,58,108,0.92)), url('img/court-ohana.jpg'); }
+    .courts-gallery .photo:nth-child(2) { min-height: 200px; background-image: linear-gradient(140deg, rgba(41,169,225,0.18), rgba(23,58,108,0.45)), url('img/play-action.webp'); }
     .courts-gallery .photo:nth-child(3) { min-height: 200px; background-image: linear-gradient(140deg, rgba(41,169,225,0.5), rgba(23,58,108,0.92)), url('img/court-hyatt.jpg'); }
     .specs { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--line-navy); border: 1px solid var(--line-navy); border-radius: var(--r); overflow: hidden; }
     .spec { background: var(--navy); padding: 24px 22px; }
@@ -306,6 +306,33 @@
     .ig-follow:hover { filter: brightness(1.05); transform: translateY(-3px); }
     .ig-follow svg { width: 30px; height: 30px; }
 
+    /* ─── Open Play Rules card ─── */
+    .rules-card { margin-top: 30px; background: var(--navy); border-radius: var(--r); padding: clamp(26px,3.5vw,42px); display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(24px,4vw,52px); align-items: center; }
+    .rules-card .eyebrow { color: var(--sun); }
+    .rules-card h3 { font-family: var(--f-disp); font-weight: 900; font-size: clamp(1.5rem,2.6vw,2.1rem); color: #fff; text-transform: uppercase; letter-spacing: -0.015em; margin: 8px 0 14px; line-height: 0.98; }
+    .rules-card .aloha { font-family: var(--f-disp); font-weight: 800; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--sun); }
+    .rules-list { list-style: none; display: grid; gap: 14px; }
+    .rules-list li { display: grid; grid-template-columns: 24px 1fr; gap: 13px; align-items: start; color: var(--on-navy); font-size: 1.02rem; line-height: 1.4; }
+    .rules-list svg { width: 22px; height: 22px; color: var(--court); margin-top: 1px; flex-shrink: 0; }
+
+    /* ─── Player Reviews ─── */
+    .reviews-banner { position: relative; height: clamp(200px, 32vw, 360px); border-radius: var(--r); overflow: hidden; margin-bottom: clamp(34px,5vw,52px); background: var(--navy) center/cover no-repeat; }
+    .reviews-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,42,82,0.05) 40%, rgba(15,42,82,0.55)); }
+    .reviews-cap { position: absolute; left: 0; bottom: 0; z-index: 1; padding: 20px clamp(18px,3vw,28px); display: inline-flex; align-items: center; gap: 9px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; }
+    .reviews-cap::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--sun); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review { display: flex; flex-direction: column; background: var(--navy); border-radius: var(--r); padding: 26px 26px 22px; }
+    .review-stars { color: var(--sun); font-size: 15px; letter-spacing: 3px; margin-bottom: 13px; }
+    .review p { font-size: 0.97rem; color: var(--on-navy); line-height: 1.6; flex-grow: 1; margin: 0; }
+    .review-by { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line-navy); }
+    .review-av { width: 40px; height: 40px; border-radius: 50%; background: var(--sun); color: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--f-disp); font-weight: 900; font-size: 16px; flex-shrink: 0; }
+    .review-name { font-family: var(--f-disp); font-weight: 700; font-size: 0.95rem; color: #fff; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.1; }
+    .review-meta { display: block; font-family: var(--f-mono); font-size: 9.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--on-navy-soft); margin-top: 3px; }
+    .review-cta { align-items: center; justify-content: center; text-align: center; gap: 12px; background: var(--sun); text-decoration: none; transition: filter 0.2s, transform 0.25s var(--ease); }
+    .review-cta:hover { filter: brightness(1.05); transform: translateY(-3px); }
+    .review-cta b { font-family: var(--f-disp); font-weight: 900; font-size: 1.15rem; text-transform: uppercase; color: var(--navy); line-height: 1.12; letter-spacing: -0.01em; }
+    .review-cta span { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); opacity: 0.85; }
+
     /* ════════════════════ MOBILE ════════════════════ */
     @media (max-width: 920px) {
       .nav-links { display: none; }
@@ -316,6 +343,8 @@
       .specs { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .price-grid { grid-template-columns: 1fr; }
       .ig-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .rules-card { grid-template-columns: 1fr; gap: 22px; }
+      .reviews-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .foot-top { grid-template-columns: 1fr 1fr; gap: 28px; }
     }
     @media (max-width: 540px) {
@@ -329,6 +358,7 @@
       .courts-gallery { grid-template-columns: 1fr; }
       .courts-gallery .photo:nth-child(1) { grid-column: auto; }
       .specs { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
       .foot-top { grid-template-columns: 1fr; gap: 24px; }
       .foot-bot { flex-direction: column; }
     }
@@ -355,7 +385,7 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#story">Story</a></li>
         <li><a href="#visit">Visit</a></li>
-        <li><a href="#play" class="nav-cta">Book a Court</a></li>
+        <li><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="nav-cta">Book a Court</a></li>
       </ul>
       <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
     </div>
@@ -367,7 +397,7 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#story">Story</a></li>
         <li><a href="#visit">Visit</a></li>
-        <li><a href="#play" class="dr-cta">Book a Court</a></li>
+        <li><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="dr-cta">Book a Court</a></li>
       </ul>
     </div>
   </nav>
@@ -387,7 +417,7 @@
       <p class="hero-sub">Maui's home court — twelve covered, lighted pro courts inside Hyatt Regency Maui at Kaʻanapali Beach Resort. Open to the island and its guests, every day.</p>
       <span class="hstat" data-hours-status hidden><span class="hstat-dot"></span><span class="hstat-txt"></span></span>
       <div class="hero-actions">
-        <a href="#play" class="btn btn-sun">Book a Court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+        <a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-sun">Book a Court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
         <a href="#visit" class="btn btn-ghost-light">Hours &amp; Directions</a>
       </div>
     </div>
@@ -466,29 +496,42 @@
         <h3>Court Rental</h3>
         <p class="desc">Reserve a full court for your group — open play, drills, or run your own session. Paddle and ball rentals at the ProShop.</p>
         <div class="price-meta"><span class="pill">Up to 6 players</span><span class="pill">1 hour</span></div>
-        <div class="price-row"><div class="amt">$100</div><a href="#visit" class="btn btn-ghost-dark">Book</a></div>
+        <div class="price-row"><div class="amt">$100</div><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-ghost-dark">Book</a></div>
       </div>
       <div class="price-card feat rv d1">
         <h3>Learn to Play</h3>
         <p class="desc">Never held a paddle? Our coaches will have you rallying — and grinning — by the end of your first session. Equipment provided, zero experience needed.</p>
         <div class="price-meta"><span class="pill">Up to 4 players</span><span class="pill">1 hour</span><span class="pill">Gear provided</span></div>
-        <div class="price-row"><div class="amt">$150</div><a href="#visit" class="btn btn-sun">Book</a></div>
+        <div class="price-row"><div class="amt">$150</div><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-sun">Book</a></div>
       </div>
       <div class="price-card rv">
         <h3>Private Coaching</h3>
         <p class="desc">Top one-on-one (or twos) coaching focused entirely on your game — identify gaps, build strengths, sharpen your third-shot drop.</p>
         <div class="price-meta"><span class="pill">Up to 2 players</span><span class="pill">1 hour</span></div>
-        <div class="price-row"><div class="amt">$120</div><a href="#visit" class="btn btn-ghost-dark">Book</a></div>
+        <div class="price-row"><div class="amt">$120</div><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-ghost-dark">Book</a></div>
       </div>
       <div class="price-card rv d1">
         <h3>3 &amp; Me Coaching</h3>
         <p class="desc">Bring a small crew and play with a coach — small-group instruction covering dinking, positioning, stacking and strategy.</p>
         <div class="price-meta"><span class="pill">Up to 3 players</span><span class="pill">1 hour</span></div>
-        <div class="price-row"><div class="amt">$140</div><a href="#visit" class="btn btn-ghost-dark">Book</a></div>
+        <div class="price-row"><div class="amt">$140</div><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-ghost-dark">Book</a></div>
       </div>
     </div>
-    <!-- ▶ Point the "Book" buttons at your real booking system URL when ready (currently jump to Visit). ◀ -->
-    <p class="price-note">Prices are per session. Drop-ins welcome during open hours — see Visit for details.</p>
+    <p class="price-note">Prices are per session · book instantly through Square. Drop-ins welcome during open hours.</p>
+
+    <div class="rules-card rv">
+      <div>
+        <span class="eyebrow">Drop-In</span>
+        <h3>Open Play Rules</h3>
+        <span class="aloha">Play With Aloha</span>
+      </div>
+      <ul class="rules-list">
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="13.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="14" r="1" fill="currentColor" stroke="none"/></svg>Play at your skill level.</li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="13.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="14" r="1" fill="currentColor" stroke="none"/></svg>2 on, 2 off — winners stay.</li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="13.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="14" r="1" fill="currentColor" stroke="none"/></svg>Winners stay a maximum of 3 games.</li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="13.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="14" r="1" fill="currentColor" stroke="none"/></svg>4 on, 4 off if 4 paddles are waiting.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -553,6 +596,52 @@
   </div>
 </section>
 
+<!-- ════════════════════ REVIEWS ════════════════════ -->
+<section class="sec" id="reviews" aria-labelledby="reviews-h2">
+  <div class="wrap">
+    <div class="reviews-banner rv" style="background-image:url('img/group.webp')" role="img" aria-label="The OHANA pickleball community — dozens of players gathered on court under the lights">
+      <span class="reviews-cap">Club night · the OHANA ohana</span>
+    </div>
+    <div class="sec-head rv light" style="text-align:center; max-width:60ch; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow">Player Reviews</span>
+      <h2 class="h2" id="reviews-h2" style="margin-top:12px;">Loved by the Maui pickleball ohana</h2>
+      <p class="lead" style="margin:14px auto 0;">Real reviews from players on Google.</p>
+    </div>
+    <!-- ▶ Real Google reviews. Swap the CTA href below for your direct Google reviews URL. ◀ -->
+    <div class="reviews-grid">
+      <article class="review rv">
+        <div class="review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</div>
+        <p>“Pat and Jen are the coolest. What they've created here is an amazing place for players — the courts are perfectly spaced and the playing surface is the best I've played on.”</p>
+        <div class="review-by"><span class="review-av" aria-hidden="true">P</span><span><span class="review-name">Patrick H.</span><span class="review-meta">Local Guide · Google</span></span></div>
+      </article>
+      <article class="review rv">
+        <div class="review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</div>
+        <p>“Big mahalo to Ohana Pickleball Club for taking care of our last-minute event. They went the extra mile — even staying after hours to make sure our tournament got done.”</p>
+        <div class="review-by"><span class="review-av" aria-hidden="true">K</span><span><span class="review-name">Keneth Basubas</span><span class="review-meta">Google Review</span></span></div>
+      </article>
+      <article class="review rv">
+        <div class="review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</div>
+        <p>“Best courts! Cool and breezy. There are 12 courts and a water machine to refill your bottle — and a really nice, clean bathroom too, thank goodness!”</p>
+        <div class="review-by"><span class="review-av" aria-hidden="true">S</span><span><span class="review-name">Susana Ngalu</span><span class="review-meta">Google Review</span></span></div>
+      </article>
+      <article class="review rv">
+        <div class="review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</div>
+        <p>“This is our new fav place to play. We live in Kihei but always come here whenever we can. The owners are the nicest people you'll ever meet — and the price is very affordable.”</p>
+        <div class="review-by"><span class="review-av" aria-hidden="true">S</span><span><span class="review-name">Siueli</span><span class="review-meta">Google Review</span></span></div>
+      </article>
+      <article class="review rv">
+        <div class="review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</div>
+        <p>“We drive from the other side because it's such a well-run and welcoming place. The courts are organized by skill level so everyone enjoys their games, and the owner is always kind and thoughtful.”</p>
+        <div class="review-by"><span class="review-av" aria-hidden="true">L</span><span><span class="review-name">Luseane Liou</span><span class="review-meta">Google Review</span></span></div>
+      </article>
+      <a class="review review-cta rv" href="https://www.google.com/search?q=OHANA+Pickleball+Club+Maui+reviews" target="_blank" rel="noopener">
+        <b>Read more on Google</b>
+        <span>See all reviews →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════════ FOLLOW / INSTAGRAM ════════════════════ -->
 <section class="sec light" id="social" aria-labelledby="social-h2">
   <div class="wrap">
@@ -565,7 +654,7 @@
          latest @ohanapickleballclub posts. Until then, these tiles link to the profile. ◀ -->
     <div class="ig-grid rv d1">
       <a class="ig-tile" style="background-image:url('img/court-aloha.jpg')" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram — Play With Aloha court"></a>
-      <a class="ig-tile" style="background-image:url('img/court-ohana.jpg')" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram — wave-mural courts"></a>
+      <a class="ig-tile" style="background-image:url('img/social-proshop.jpg')" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram — players hanging out at the ProShop"></a>
       <a class="ig-tile" style="background-image:url('img/court-hyatt.jpg')" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram — courts at Hyatt Regency"></a>
       <a class="ig-follow" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
