@@ -49,6 +49,7 @@
       --on-navy-soft:  rgba(255,255,255,0.66);
       --on-navy-dim:   rgba(255,255,255,0.50);
       --line-navy:     rgba(255,255,255,0.14);
+      --open:          #3FD27E;                   /* functional "open now" status dot */
 
       --f-disp: 'Archivo', system-ui, sans-serif;
       --f-body: 'DM Sans', system-ui, sans-serif;
@@ -281,6 +282,30 @@
     .foot-bot span { font-size: 12.5px; color: var(--on-navy-dim); }
     .foot-bot a { color: var(--sun); text-decoration: none; opacity: 0.8; } .foot-bot a:hover { opacity: 1; }
 
+    /* ─── Live "Open now" status pill (Hawaii time, set by JS) ─── */
+    .hstat { display: inline-flex; align-items: center; gap: 9px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.05em; color: var(--on-navy); background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: 100px; padding: 8px 15px; }
+    .hstat[hidden] { display: none; }
+    .hstat-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--on-navy-dim); flex-shrink: 0; }
+    .hstat.is-open { color: #fff; }
+    .hstat.is-open .hstat-dot { background: var(--open); }
+    @media (prefers-reduced-motion: no-preference) { .hstat.is-open .hstat-dot { animation: hpulse 2.2s ease-out infinite; } }
+    @keyframes hpulse { 0% { box-shadow: 0 0 0 0 rgba(63,210,126,0.55); } 70% { box-shadow: 0 0 0 8px rgba(63,210,126,0); } 100% { box-shadow: 0 0 0 0 rgba(63,210,126,0); } }
+    .hero .hstat { margin-bottom: 22px; }
+    .visit .hstat { margin-bottom: 16px; }
+
+    /* ─── Embedded map ─── */
+    .visit-map { margin-top: 18px; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line-navy); line-height: 0; }
+    .visit-map iframe { width: 100%; height: 240px; border: 0; display: block; }
+
+    /* ─── Instagram band ─── */
+    .ig-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .ig-tile { position: relative; display: block; aspect-ratio: 1 / 1; border-radius: 14px; overflow: hidden; text-decoration: none; background-color: var(--navy); background-size: cover; background-position: center; transition: transform 0.25s var(--ease); }
+    .ig-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(15,42,82,0.45)); opacity: 0; transition: opacity 0.2s; }
+    .ig-tile:hover { transform: scale(1.02); } .ig-tile:hover::after { opacity: 1; }
+    .ig-follow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; aspect-ratio: 1 / 1; border-radius: 14px; background: var(--sun); color: var(--navy); text-decoration: none; text-align: center; font-family: var(--f-disp); font-weight: 800; font-size: 13px; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.25; transition: filter 0.2s, transform 0.25s var(--ease); }
+    .ig-follow:hover { filter: brightness(1.05); transform: translateY(-3px); }
+    .ig-follow svg { width: 30px; height: 30px; }
+
     /* ════════════════════ MOBILE ════════════════════ */
     @media (max-width: 920px) {
       .nav-links { display: none; }
@@ -290,6 +315,7 @@
       .courts-gallery .photo:nth-child(1) { grid-row: auto; grid-column: 1 / 3; min-height: 280px; }
       .specs { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .price-grid { grid-template-columns: 1fr; }
+      .ig-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .foot-top { grid-template-columns: 1fr 1fr; gap: 28px; }
     }
     @media (max-width: 540px) {
@@ -359,6 +385,7 @@
       <span class="hero-kicker">Play With Aloha · Kaʻanapali, Maui</span>
       <h1 id="hero-h1">Twelve courts.<br><em>One ohana.</em></h1>
       <p class="hero-sub">Maui's home court — twelve covered, lighted pro courts inside Hyatt Regency Maui at Kaʻanapali Beach Resort. Open to the island and its guests, every day.</p>
+      <span class="hstat" data-hours-status hidden><span class="hstat-dot"></span><span class="hstat-txt"></span></span>
       <div class="hero-actions">
         <a href="#play" class="btn btn-sun">Book a Court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
         <a href="#visit" class="btn btn-ghost-light">Hours &amp; Directions</a>
@@ -526,6 +553,28 @@
   </div>
 </section>
 
+<!-- ════════════════════ FOLLOW / INSTAGRAM ════════════════════ -->
+<section class="sec light" id="social" aria-labelledby="social-h2">
+  <div class="wrap">
+    <div class="sec-head rv light" style="text-align:center; max-width:62ch; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow">@ohanapickleballclub</span>
+      <h2 class="h2" id="social-h2" style="margin-top:12px;">Follow the aloha</h2>
+      <p class="lead" style="margin:14px auto 0;">Daily play, events and island life from the courts at Kaʻanapali.</p>
+    </div>
+    <!-- ▶ LIVE FEED: paste a free Behold.so (or SnapWidget) embed snippet here to auto-pull the
+         latest @ohanapickleballclub posts. Until then, these tiles link to the profile. ◀ -->
+    <div class="ig-grid rv d1">
+      <a class="ig-tile" style="background-image:url('img/court-aloha.jpg')" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram — Play With Aloha court"></a>
+      <a class="ig-tile" style="background-image:url('img/court-ohana.jpg')" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram — wave-mural courts"></a>
+      <a class="ig-tile" style="background-image:url('img/court-hyatt.jpg')" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram — courts at Hyatt Regency"></a>
+      <a class="ig-follow" href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Follow<br>@ohanapickleballclub
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════════ VISIT ════════════════════ -->
 <section class="sec on-navy" id="visit" aria-labelledby="visit-h2">
   <div class="wrap visit">
@@ -552,9 +601,12 @@
           <span class="c-v"><a href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener">@ohanapickleballclub</a></span>
         </li>
       </ul>
-      <a href="https://maps.google.com/?q=200+Nohea+Kai+Drive+Lahaina+HI+96761" target="_blank" rel="noopener noreferrer" class="btn btn-sun">Get Directions <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+      <!-- ▶ Keyless Google Maps embed; swap for a Maps place-embed (API key) if you want a branded/styled map. ◀ -->
+      <div class="visit-map"><iframe title="Map to OHANA Pickleball Club, 200 Nohea Kai Drive, Lahaina" src="https://www.google.com/maps?q=200%20Nohea%20Kai%20Drive%2C%20Lahaina%2C%20HI%2096761&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      <a href="https://maps.google.com/?q=200+Nohea+Kai+Drive+Lahaina+HI+96761" target="_blank" rel="noopener noreferrer" class="btn btn-sun" style="margin-top:18px;">Get Directions <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
     </div>
     <div class="rv d1">
+      <span class="hstat" data-hours-status hidden><span class="hstat-dot"></span><span class="hstat-txt"></span></span>
       <div class="hours">
         <h3 class="hours-h">Our Hours</h3>
         <div class="hours-r"><span class="d">Saturday</span><span class="t">8am – 9pm</span></div>
@@ -636,6 +688,38 @@
       }, { rootMargin: '-50% 0px -50% 0px' });
       document.querySelectorAll('main section[id]').forEach(function (s) { sio.observe(s); });
     }
+  })();
+
+  /* Live "Open now" status — computed in Hawaii time (Pacific/Honolulu) against the real hours. */
+  (function () {
+    var els = document.querySelectorAll('[data-hours-status]');
+    if (!els.length) return;
+    // minutes-from-midnight open intervals per weekday (0=Sun … 6=Sat)
+    var H = { 0:[[480,780]], 1:[[480,780],[900,1260]], 2:[[480,780],[900,1260]], 3:[[480,780],[900,1260]], 4:[[480,780],[900,1260]], 5:[[480,780],[900,1260]], 6:[[480,1260]] };
+    var DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    function fmt(min) { var h = Math.floor(min/60), m = min%60, ap = h>=12?'pm':'am', h12 = h%12||12; return h12 + (m ? ':' + (m<10?'0':'') + m : '') + ap; }
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone:'Pacific/Honolulu', weekday:'short', hour:'2-digit', minute:'2-digit', hourCycle:'h23' }).formatToParts(new Date());
+      function part(t) { var p = parts.find(function (q) { return q.type === t; }); return p ? p.value : null; }
+      var wd = DAYS.indexOf(part('weekday'));
+      var cur = (+part('hour')) * 60 + (+part('minute'));
+      var ivs = H[wd] || [], open = false, closeAt = null, i;
+      for (i = 0; i < ivs.length; i++) { if (cur >= ivs[i][0] && cur < ivs[i][1]) { open = true; closeAt = ivs[i][1]; break; } }
+      var txt;
+      if (open) {
+        txt = 'Open now · until ' + fmt(closeAt);
+      } else {
+        var next = null;
+        for (i = 0; i < ivs.length; i++) { if (ivs[i][0] > cur) { next = ivs[i][0]; break; } }
+        if (next != null) { txt = 'Closed · opens ' + fmt(next); }
+        else { var d = wd, g = 0; do { d = (d+1)%7; g++; } while ((!H[d] || !H[d].length) && g < 8); txt = 'Closed · opens ' + DAYS[d] + ' ' + fmt(H[d][0][0]); }
+      }
+      els.forEach(function (el) {
+        el.classList.toggle('is-open', open);
+        var t = el.querySelector('.hstat-txt'); if (t) t.textContent = txt;
+        el.removeAttribute('hidden');
+      });
+    } catch (e) { /* unsupported → pill stays hidden, full hours table still shows */ }
   })();
 </script>
 </body>
