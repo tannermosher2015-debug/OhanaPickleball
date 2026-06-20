@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit | OHANA Pickleball Club – Maui</title>
+  <meta name="description" content="Find OHANA Pickleball Club inside Hyatt Regency Maui at Kaʻanapali — 200 Nohea Kai Drive, Lahaina. Hours, free validated parking, map and directions. Open daily, drop-ins welcome.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Visit — OHANA Pickleball Club, Maui">
+  <meta property="og:description" content="200 Nohea Kai Drive, Lahaina — inside Hyatt Regency Maui at Kaʻanapali. Hours, parking and directions.">
+  <meta property="og:image" content="https://ohana-pickleball.vercel.app/img/court-hyatt.jpg">
+  <meta property="og:url" content="https://ohana-pickleball.vercel.app/visit.html">
+  <meta name="theme-color" content="#173A6C">
+  <link rel="icon" type="image/png" href="img/logo-mark.png">
+  <link rel="apple-touch-icon" href="img/logo-mark.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:#173A6C; --court:#29A9E1; --sun:#FFC629; --white:#FFFFFF; --mist:#EAF1F8;
+      --ink:#112A4F; --muted:#45566F; --navy-2:#0F2A52; --line:#D7E1EC;
+      --on-navy:rgba(255,255,255,0.92); --on-navy-soft:rgba(255,255,255,0.66); --on-navy-dim:rgba(255,255,255,0.50); --line-navy:rgba(255,255,255,0.14); --open:#3FD27E;
+      --f-disp:'Archivo',system-ui,sans-serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'DM Mono',ui-monospace,monospace;
+      --maxw:1280px; --ease:cubic-bezier(0.22,1,0.36,1); --r:16px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--f-body);font-size:1.0625rem;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+    img,svg{display:block;max-width:100%;}
+    a{color:inherit;}
+    ::selection{background:var(--sun);color:var(--navy);}
+    .skip-nav{position:absolute;top:-120%;left:16px;z-index:9999;background:var(--sun);color:var(--navy);padding:12px 20px;border-radius:0 0 10px 10px;font-weight:800;font-size:14px;text-decoration:none;transition:top 0.12s;}
+    .skip-nav:focus{top:0;}
+    :focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:5px;}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(23,58,108,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.12);}
+    .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px);display:flex;align-items:center;justify-content:space-between;min-height:72px;}
+    .brand{display:flex;align-items:center;text-decoration:none;}
+    .brand-logo{height:54px;width:auto;display:block;background:#fff;border-radius:10px;padding:5px 11px;box-shadow:0 2px 10px rgba(0,0,0,0.18);}
+    .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+    .nav-links a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--on-navy-soft);text-decoration:none;padding:10px 12px;border-radius:7px;transition:color 0.15s,background 0.15s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);}
+    .nav-cta{background:var(--sun);color:var(--navy)!important;font-weight:800;border-radius:100px;padding:10px 22px!important;margin-left:8px;transition:filter 0.15s,transform 0.15s;}
+    .nav-cta:hover{filter:brightness(1.05);transform:translateY(-1px);}
+    .burger{display:none;width:44px;height:44px;background:none;border:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+    .burger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform 0.25s var(--ease),opacity 0.2s;}
+    .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .drawer{display:none;background:var(--navy);border-top:1px solid rgba(255,255,255,0.10);padding:8px clamp(18px,4vw,40px) 22px;}
+    .drawer ul{list-style:none;}
+    .drawer a{display:flex;align-items:center;min-height:50px;font-family:var(--f-mono);font-size:13px;letter-spacing:0.07em;text-transform:uppercase;color:var(--on-navy);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .drawer a.dr-cta{margin-top:14px;min-height:54px;justify-content:center;background:var(--sun);color:var(--navy);border:none;border-radius:100px;font-weight:800;}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;gap:9px;min-height:52px;padding:15px 30px;border-radius:100px;font-family:var(--f-disp);font-weight:800;font-size:14px;letter-spacing:0.02em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:transform 0.18s var(--ease),filter 0.18s,background 0.2s,color 0.2s,border-color 0.2s;}
+    .btn:hover{transform:translateY(-2px);}
+    .btn svg{transition:transform 0.2s var(--ease);}.btn:hover svg{transform:translateX(4px);}
+    .btn-sun{background:var(--sun);color:var(--navy);}.btn-sun:hover{filter:brightness(1.05);}
+    .btn-ghost-light{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);}.btn-ghost-light:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+    .btn-ghost-dark{background:transparent;color:var(--navy);border:2px solid var(--navy);}.btn-ghost-dark:hover{background:var(--navy);color:#fff;}
+
+    /* PAGE HEADER */
+    .page-head{position:relative;background:var(--navy);overflow:hidden;padding:clamp(56px,7vw,104px) clamp(18px,4vw,40px) clamp(44px,6vw,72px);}
+    .page-head::before{content:'';position:absolute;inset:0;background:radial-gradient(70% 70% at 85% -10%,rgba(41,169,225,0.28),transparent 60%);pointer-events:none;}
+    .page-head-in{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;}
+    .back-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-navy-soft);text-decoration:none;margin-bottom:24px;transition:color 0.15s;}
+    .back-link:hover{color:var(--sun);}
+    .page-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sun);margin-bottom:18px;}
+    .page-eyebrow::before{content:'';width:34px;height:2px;background:var(--sun);}
+    .page-head h1{font-family:var(--f-disp);font-weight:900;font-size:clamp(2.6rem,6.5vw,5rem);line-height:0.92;letter-spacing:-0.025em;text-transform:uppercase;color:#fff;margin-bottom:18px;}
+    .page-head p{font-size:clamp(1.05rem,1.7vw,1.25rem);color:var(--on-navy-soft);line-height:1.6;max-width:54ch;margin-bottom:26px;}
+    .page-actions{display:flex;flex-wrap:wrap;gap:13px;align-items:center;}
+
+    /* status pill */
+    .hstat{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.05em;color:var(--on-navy);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:100px;padding:13px 16px;}
+    .hstat[hidden]{display:none;}
+    .hstat-dot{width:8px;height:8px;border-radius:50%;background:var(--on-navy-dim);flex-shrink:0;}
+    .hstat.is-open{color:#fff;}.hstat.is-open .hstat-dot{background:var(--open);}
+    @media (prefers-reduced-motion:no-preference){.hstat.is-open .hstat-dot{animation:hpulse 2.2s ease-out infinite;}}
+    @keyframes hpulse{0%{box-shadow:0 0 0 0 rgba(63,210,126,0.55);}70%{box-shadow:0 0 0 8px rgba(63,210,126,0);}100%{box-shadow:0 0 0 0 rgba(63,210,126,0);}}
+
+    /* SECTION SHELL */
+    section[id]{scroll-margin-top:82px;}
+    .sec{padding:clamp(60px,7vw,104px) clamp(18px,4vw,40px);}
+    .wrap{max-width:var(--maxw);margin:0 auto;}
+    .light{background:var(--mist);}.on-navy{background:var(--navy);}
+    .eyebrow{font-family:var(--f-mono);font-size:0.6875rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--court);display:inline-block;margin-bottom:14px;}
+    .on-navy .eyebrow{color:var(--sun);}.light .eyebrow{color:#155F88;}
+    .h2{font-family:var(--f-disp);font-weight:900;font-size:clamp(1.9rem,4.6vw,3.4rem);line-height:0.98;letter-spacing:-0.02em;color:var(--navy);text-transform:uppercase;}
+    .on-navy .h2{color:#fff;}
+    .lead{font-size:1.12rem;line-height:1.7;color:var(--muted);max-width:54ch;}.on-navy .lead{color:var(--on-navy-soft);}
+    .sec-head{margin-bottom:clamp(34px,4vw,48px);max-width:62ch;}.sec-head .h2{margin-top:12px;}
+    @media (prefers-reduced-motion:no-preference){.js .rv{opacity:0;transform:translateY(16px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease);}.js .rv.in{opacity:1;transform:none;}.js .rv.d1{transition-delay:0.1s;}}
+
+    /* FIND US (contact + hours + map) */
+    .find{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,5vw,72px);align-items:stretch;}
+    .contact-list{list-style:none;display:grid;margin:0 0 30px;}
+    .contact-list li{padding:17px 0;border-bottom:1px solid var(--line);}
+    .contact-list li:first-child{border-top:1px solid var(--line);}
+    .c-k{display:block;font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#155F88;margin-bottom:7px;}
+    .c-v{font-size:1.05rem;color:var(--ink);line-height:1.4;}
+    .c-v a{text-decoration:none;transition:color 0.15s;}.c-v a:hover{color:#155F88;}
+    .c-v small{display:block;color:var(--muted);font-size:0.85rem;margin-top:3px;}
+    .hours{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;}
+    .hours-h{background:var(--sun);padding:14px 22px;font-family:var(--f-disp);font-weight:900;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:var(--navy);}
+    .hours-r{display:grid;grid-template-columns:1fr auto;padding:14px 22px;border-top:1px solid var(--line);gap:10px;}
+    .hours-r .d{font-family:var(--f-mono);font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);}
+    .hours-r .t{font-size:13px;color:var(--ink);font-weight:500;text-align:right;}
+    .hours-r .t .closed{color:#155F88;}
+    .visit-map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);line-height:0;min-height:clamp(320px,40vw,100%);height:100%;}
+    .visit-map iframe{width:100%;height:100%;min-height:320px;border:0;display:block;}
+
+    /* GETTING HERE (parking) */
+    .park-wrap{max-width:880px;margin:0 auto;}
+    .park-graphic{margin-top:8px;}
+    .park-graphic img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--line-navy);}
+
+    /* CTA */
+    .cta{background:var(--navy-2);text-align:center;padding:clamp(56px,8vw,104px) clamp(18px,4vw,40px);}
+    .cta .page-eyebrow{justify-content:center;}
+    .cta h2{font-family:var(--f-disp);font-weight:900;font-size:clamp(2rem,5vw,3.6rem);line-height:0.98;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;margin:6px auto 18px;max-width:18ch;}
+    .cta p{color:var(--on-navy-soft);font-size:1.1rem;line-height:1.6;max-width:46ch;margin:0 auto 30px;}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;}
+
+    /* FOOTER */
+    footer{background:var(--navy-2);padding:clamp(44px,6vw,68px) clamp(18px,4vw,40px) 30px;border-top:1px solid var(--line-navy);}
+    .foot-top{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:38px;padding-bottom:36px;margin-bottom:22px;border-bottom:1px solid var(--line-navy);}
+    .foot-name{font-family:var(--f-disp);font-weight:900;font-size:21px;color:#fff;text-transform:uppercase;margin-bottom:5px;}
+    .foot-tag{font-family:var(--f-mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sun);margin-bottom:18px;}
+    .foot-soc{display:flex;gap:10px;}
+    .foot-soc a{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;color:var(--on-navy-soft);text-decoration:none;transition:background 0.2s,color 0.2s;}
+    .foot-soc a:hover{background:var(--sun);color:var(--navy);}
+    .foot-col h2{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-navy-dim);margin-bottom:15px;}
+    .foot-col ul{list-style:none;display:grid;gap:2px;}
+    .foot-col a{display:inline-flex;align-items:center;min-height:36px;font-size:14px;color:var(--on-navy-soft);text-decoration:none;transition:color 0.15s;}
+    .foot-col a:hover{color:#fff;}
+    .foot-bot{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .foot-bot span{font-size:12.5px;color:var(--on-navy-dim);}
+    .foot-bot a{color:var(--sun);text-decoration:none;opacity:0.8;}.foot-bot a:hover{opacity:1;}
+
+    @media (max-width:920px){
+      .nav-links{display:none;}.burger{display:flex;}
+      .find{grid-template-columns:1fr;gap:36px;}
+      .visit-map{height:340px;min-height:340px;}
+      .foot-top{grid-template-columns:1fr 1fr;gap:28px;}
+    }
+    @media (max-width:540px){
+      body{font-size:16px;}
+      .page-actions{flex-direction:column;align-items:stretch;}.page-actions .btn{width:100%;justify-content:center;}.page-actions .hstat{justify-content:center;}
+      .cta-actions{flex-direction:column;}.cta-actions .btn{width:100%;justify-content:center;}
+      .foot-top{grid-template-columns:1fr;gap:24px;}.foot-bot{flex-direction:column;}
+    }
+  </style>
+  <script>document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<a href="#main" class="skip-nav">Skip to main content</a>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <div class="nav-in">
+      <a href="index.html" class="brand" aria-label="OHANA Pickleball Club — home">
+        <img class="brand-logo" src="img/logo.png" width="457" height="217" alt="OHANA Pickleball Club — Maui">
+      </a>
+      <ul class="nav-links">
+        <li><a href="play.html#courts">Courts</a></li>
+        <li><a href="play.html">Play &amp; Train</a></li>
+        <li><a href="index.html#membership">Membership</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="visit.html" class="active" aria-current="page">Visit</a></li>
+        <li><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="nav-cta">Book a Court</a></li>
+      </ul>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+    </div>
+    <div class="drawer" id="drawer">
+      <ul>
+        <li><a href="play.html#courts">Courts</a></li>
+        <li><a href="play.html">Play &amp; Train</a></li>
+        <li><a href="index.html#membership">Membership</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="visit.html" aria-current="page">Visit</a></li>
+        <li><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="dr-cta">Book a Court</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HEADER -->
+<section class="page-head" aria-labelledby="visit-h1">
+  <div class="page-head-in">
+    <a href="index.html" class="back-link">← Back to home</a>
+    <span class="page-eyebrow">Visit</span>
+    <h1 id="visit-h1">Come play with us</h1>
+    <p>Inside Hyatt Regency Maui at Kaʻanapali Beach Resort — 200 Nohea Kai Drive, Lahaina. Drop in during open hours, or reach out and we'll set you up.</p>
+    <div class="page-actions">
+      <a href="https://maps.google.com/?q=200+Nohea+Kai+Drive+Lahaina+HI+96761" target="_blank" rel="noopener noreferrer" class="btn btn-sun">Get Directions <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+      <span class="hstat" data-hours-status hidden><span class="hstat-dot"></span><span class="hstat-txt"></span></span>
+    </div>
+  </div>
+</section>
+
+<!-- FIND US -->
+<section class="sec" id="find" aria-labelledby="find-h2">
+  <div class="wrap find">
+    <div class="rv">
+      <div class="sec-head" style="margin-bottom:0;">
+        <span class="eyebrow" style="color:#155F88;">Find Us</span>
+        <h2 class="h2" id="find-h2">Hours &amp; contact</h2>
+      </div>
+      <ul class="contact-list">
+        <li>
+          <span class="c-k">Address</span>
+          <span class="c-v">200 Nohea Kai Drive, Lahaina, HI 96761<small>Inside Hyatt Regency Maui Resort &amp; Spa</small></span>
+        </li>
+        <!-- ▶ Confirm phone/email are current. ◀ -->
+        <li>
+          <span class="c-k">Phone</span>
+          <span class="c-v"><a href="tel:+18086674449">(808) 667-4449</a></span>
+        </li>
+        <li>
+          <span class="c-k">Email</span>
+          <span class="c-v"><a href="mailto:maui@ohanapbc.com">maui@ohanapbc.com</a></span>
+        </li>
+        <li>
+          <span class="c-k">Social</span>
+          <span class="c-v"><a href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener">@ohanapickleballclub</a></span>
+        </li>
+      </ul>
+      <div class="hours">
+        <h3 class="hours-h">Our Hours</h3>
+        <div class="hours-r"><span class="d">Saturday</span><span class="t">8am – 9pm</span></div>
+        <div class="hours-r"><span class="d">Mon – Fri</span><span class="t">8am–1pm · 3pm–9pm<br><span class="closed">(closed 1–3pm)</span></span></div>
+        <div class="hours-r"><span class="d">Sunday</span><span class="t">8am – 1pm</span></div>
+      </div>
+    </div>
+    <!-- ▶ Keyless Google Maps embed; swap for a Maps place-embed (API key) for a branded/styled map. ◀ -->
+    <div class="visit-map rv d1"><iframe title="Map to OHANA Pickleball Club, 200 Nohea Kai Drive, Lahaina" src="https://www.google.com/maps?q=200%20Nohea%20Kai%20Drive%2C%20Lahaina%2C%20HI%2096761&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<!-- GETTING HERE -->
+<section class="sec light" id="parking" aria-labelledby="parking-h2">
+  <div class="wrap park-wrap">
+    <div class="sec-head rv light" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">Getting Here</span>
+      <h2 class="h2" id="parking-h2">Free validated parking</h2>
+      <p class="lead" style="margin:14px auto 0;">Pull a ticket, park in back, walk the bridge — and validate free at the ProShop.</p>
+    </div>
+    <figure class="park-graphic rv d1">
+      <img src="img/parking-map.png" width="2000" height="1429" loading="lazy"
+           alt="Free validated parking. Enter the front parking lot and pull a ticket; park in the back, right-hand side of the lot; walk over the walking bridge; turn right and walk down the path; bring your ticket for free validation at the ProShop. The map shows the lot by the walking bridge near the Hyatt Regency, between Kaʻanapali Parkway and Highway 30.">
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<!-- CTA -->
+<section class="cta" aria-labelledby="cta-h2">
+  <span class="page-eyebrow">Play With Aloha</span>
+  <h2 id="cta-h2">See you on the court</h2>
+  <p>Book a court online in under a minute, or just drop in during open hours. We'll be here.</p>
+  <div class="cta-actions">
+    <a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-sun">Book a Court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+    <a href="tel:+18086674449" class="btn btn-ghost-light">Call (808) 667-4449</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-name">OHANA Pickleball</div>
+      <div class="foot-tag">Play With Aloha · Kaʻanapali, Maui</div>
+      <div class="foot-soc">
+        <a href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="4"/><circle cx="13.2" cy="4.8" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://facebook.com/Ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col"><h2>Play</h2><ul><li><a href="play.html#rates">Court Rental</a></li><li><a href="play.html#rates">Learn to Play</a></li><li><a href="play.html#rates">Coaching</a></li><li><a href="index.html#membership">Membership</a></li></ul></div>
+    <div class="foot-col"><h2>Club</h2><ul><li><a href="play.html#courts">The Courts</a></li><li><a href="events.html">Private Events</a></li><li><a href="story.html">Our Story</a></li><li><a href="visit.html">Visit</a></li></ul></div>
+    <div class="foot-col"><h2>Contact</h2><ul><li><a href="tel:+18086674449">(808) 667-4449</a></li><li><a href="mailto:maui@ohanapbc.com">maui@ohanapbc.com</a></li><li><a href="visit.html">Hours</a></li><li><a href="visit.html#parking">Directions</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2025 OHANA Pickleball Club – Maui. All rights reserved.</span>
+    <span>Design by <a href="https://frontlinewebdesign.tech" target="_blank" rel="noopener">Frontline Web Design</a></span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var rv = document.querySelectorAll('.rv');
+    if (reduce || !('IntersectionObserver' in window)) { rv.forEach(function(el){el.classList.add('in');}); }
+    else { var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'}); rv.forEach(function(el){io.observe(el);}); }
+    var burger=document.querySelector('.burger'), drawer=document.getElementById('drawer');
+    function close(){burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu');drawer.style.display='none';}
+    burger.addEventListener('click',function(){var open=burger.getAttribute('aria-expanded')==='true';burger.setAttribute('aria-expanded',String(!open));burger.setAttribute('aria-label',open?'Open menu':'Close menu');drawer.style.display=open?'none':'block';});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+
+    /* Live "Open now" status — Hawaii time */
+    (function(){
+      var els=document.querySelectorAll('[data-hours-status]'); if(!els.length)return;
+      var H={0:[[480,780]],1:[[480,780],[900,1260]],2:[[480,780],[900,1260]],3:[[480,780],[900,1260]],4:[[480,780],[900,1260]],5:[[480,780],[900,1260]],6:[[480,1260]]};
+      var DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      function fmt(m){var h=Math.floor(m/60),mn=m%60,ap=h>=12?'pm':'am',h12=h%12||12;return h12+(mn?':'+(mn<10?'0':'')+mn:'')+ap;}
+      try{
+        var parts=new Intl.DateTimeFormat('en-US',{timeZone:'Pacific/Honolulu',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+        function part(t){var p=parts.find(function(q){return q.type===t;});return p?p.value:null;}
+        var wd=DAYS.indexOf(part('weekday')), cur=(+part('hour'))*60+(+part('minute'));
+        var ivs=H[wd]||[], open=false, closeAt=null, i;
+        for(i=0;i<ivs.length;i++){if(cur>=ivs[i][0]&&cur<ivs[i][1]){open=true;closeAt=ivs[i][1];break;}}
+        var txt;
+        if(open){txt='Open now · until '+fmt(closeAt);}
+        else{var next=null;for(i=0;i<ivs.length;i++){if(ivs[i][0]>cur){next=ivs[i][0];break;}}
+          if(next!=null){txt='Closed · opens '+fmt(next);}
+          else{var d=wd,g=0;do{d=(d+1)%7;g++;}while((!H[d]||!H[d].length)&&g<8);txt='Closed · opens '+DAYS[d]+' '+fmt(H[d][0][0]);}}
+        els.forEach(function(el){el.classList.toggle('is-open',open);var t=el.querySelector('.hstat-txt');if(t)t.textContent=txt;el.removeAttribute('hidden');});
+      }catch(e){}
+    })();
+  })();
+</script>
+</body>
+</html>
