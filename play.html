@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play &amp; Pricing | OHANA Pickleball Club – Maui</title>
+  <meta name="description" content="Book a court, learn to play, or train with a coach at OHANA Pickleball Club, Kaʻanapali. Twelve covered pro courts. Court rentals from $100, coaching, open play. Reserve online.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Play &amp; Pricing — OHANA Pickleball Club, Maui">
+  <meta property="og:description" content="Twelve covered courts at Hyatt Regency Maui. Court rentals, coaching, learn-to-play and open play. Book online.">
+  <meta property="og:image" content="https://ohana-pickleball.vercel.app/img/play-action.webp">
+  <meta property="og:url" content="https://ohana-pickleball.vercel.app/play.html">
+  <meta name="theme-color" content="#173A6C">
+  <link rel="icon" type="image/png" href="img/logo-mark.png">
+  <link rel="apple-touch-icon" href="img/logo-mark.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:#173A6C; --court:#29A9E1; --sun:#FFC629; --white:#FFFFFF; --mist:#EAF1F8;
+      --ink:#112A4F; --muted:#45566F; --navy-2:#0F2A52; --line:#D7E1EC;
+      --on-navy:rgba(255,255,255,0.92); --on-navy-soft:rgba(255,255,255,0.66); --on-navy-dim:rgba(255,255,255,0.50); --line-navy:rgba(255,255,255,0.14); --open:#3FD27E;
+      --f-disp:'Archivo',system-ui,sans-serif; --f-body:'DM Sans',system-ui,sans-serif; --f-mono:'DM Mono',ui-monospace,monospace;
+      --maxw:1280px; --ease:cubic-bezier(0.22,1,0.36,1); --r:16px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--f-body);font-size:1.0625rem;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+    img,svg{display:block;max-width:100%;}
+    a{color:inherit;}
+    ::selection{background:var(--sun);color:var(--navy);}
+    .skip-nav{position:absolute;top:-120%;left:16px;z-index:9999;background:var(--sun);color:var(--navy);padding:12px 20px;border-radius:0 0 10px 10px;font-weight:800;font-size:14px;text-decoration:none;transition:top 0.12s;}
+    .skip-nav:focus{top:0;}
+    :focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:5px;}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(23,58,108,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.12);}
+    .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px);display:flex;align-items:center;justify-content:space-between;min-height:72px;}
+    .brand{display:flex;align-items:center;text-decoration:none;}
+    .brand-logo{height:54px;width:auto;display:block;background:#fff;border-radius:10px;padding:5px 11px;box-shadow:0 2px 10px rgba(0,0,0,0.18);}
+    .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+    .nav-links a{font-family:var(--f-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--on-navy-soft);text-decoration:none;padding:10px 12px;border-radius:7px;transition:color 0.15s,background 0.15s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--white);}
+    .nav-cta{background:var(--sun);color:var(--navy)!important;font-weight:800;border-radius:100px;padding:10px 22px!important;margin-left:8px;transition:filter 0.15s,transform 0.15s;}
+    .nav-cta:hover{filter:brightness(1.05);transform:translateY(-1px);}
+    .burger{display:none;width:44px;height:44px;background:none;border:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+    .burger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform 0.25s var(--ease),opacity 0.2s;}
+    .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .drawer{display:none;background:var(--navy);border-top:1px solid rgba(255,255,255,0.10);padding:8px clamp(18px,4vw,40px) 22px;}
+    .drawer ul{list-style:none;}
+    .drawer a{display:flex;align-items:center;min-height:50px;font-family:var(--f-mono);font-size:13px;letter-spacing:0.07em;text-transform:uppercase;color:var(--on-navy);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .drawer a.dr-cta{margin-top:14px;min-height:54px;justify-content:center;background:var(--sun);color:var(--navy);border:none;border-radius:100px;font-weight:800;}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;gap:9px;min-height:52px;padding:15px 30px;border-radius:100px;font-family:var(--f-disp);font-weight:800;font-size:14px;letter-spacing:0.02em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:transform 0.18s var(--ease),filter 0.18s,background 0.2s,color 0.2s,border-color 0.2s;}
+    .btn:hover{transform:translateY(-2px);}
+    .btn svg{transition:transform 0.2s var(--ease);}.btn:hover svg{transform:translateX(4px);}
+    .btn-sun{background:var(--sun);color:var(--navy);}.btn-sun:hover{filter:brightness(1.05);}
+    .btn-ghost-light{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);}.btn-ghost-light:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+    .btn-ghost-dark{background:transparent;color:var(--navy);border:2px solid var(--navy);}.btn-ghost-dark:hover{background:var(--navy);color:#fff;}
+
+    /* PAGE HEADER */
+    .page-head{position:relative;background:var(--navy);overflow:hidden;padding:clamp(56px,7vw,104px) clamp(18px,4vw,40px) clamp(44px,6vw,72px);}
+    .page-head::before{content:'';position:absolute;inset:0;background:radial-gradient(70% 70% at 85% -10%,rgba(41,169,225,0.28),transparent 60%);pointer-events:none;}
+    .page-head-in{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;}
+    .back-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-navy-soft);text-decoration:none;margin-bottom:24px;transition:color 0.15s;}
+    .back-link:hover{color:var(--sun);}
+    .page-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sun);margin-bottom:18px;}
+    .page-eyebrow::before{content:'';width:34px;height:2px;background:var(--sun);}
+    .page-head h1{font-family:var(--f-disp);font-weight:900;font-size:clamp(2.6rem,6.5vw,5rem);line-height:0.92;letter-spacing:-0.025em;text-transform:uppercase;color:#fff;margin-bottom:18px;}
+    .page-head p{font-size:clamp(1.05rem,1.7vw,1.25rem);color:var(--on-navy-soft);line-height:1.6;max-width:54ch;margin-bottom:26px;}
+    .page-actions{display:flex;flex-wrap:wrap;gap:13px;align-items:center;}
+
+    /* status pill */
+    .hstat{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.05em;color:var(--on-navy);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:100px;padding:13px 16px;}
+    .hstat[hidden]{display:none;}
+    .hstat-dot{width:8px;height:8px;border-radius:50%;background:var(--on-navy-dim);flex-shrink:0;}
+    .hstat.is-open{color:#fff;}.hstat.is-open .hstat-dot{background:var(--open);}
+    @media (prefers-reduced-motion:no-preference){.hstat.is-open .hstat-dot{animation:hpulse 2.2s ease-out infinite;}}
+    @keyframes hpulse{0%{box-shadow:0 0 0 0 rgba(63,210,126,0.55);}70%{box-shadow:0 0 0 8px rgba(63,210,126,0);}100%{box-shadow:0 0 0 0 rgba(63,210,126,0);}}
+
+    /* SECTION SHELL */
+    section[id]{scroll-margin-top:82px;}
+    .sec{padding:clamp(64px,8vw,120px) clamp(18px,4vw,40px);}
+    .wrap{max-width:var(--maxw);margin:0 auto;}
+    .light{background:var(--mist);}
+    .on-navy{background:var(--navy);}
+    .eyebrow{font-family:var(--f-mono);font-size:0.6875rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--court);display:inline-block;margin-bottom:14px;}
+    .on-navy .eyebrow{color:var(--sun);} .light .eyebrow{color:#155F88;}
+    .h2{font-family:var(--f-disp);font-weight:900;font-size:clamp(1.9rem,4.6vw,3.6rem);line-height:0.98;letter-spacing:-0.02em;color:var(--navy);text-transform:uppercase;}
+    .on-navy .h2{color:#fff;}
+    .lead{font-size:1.12rem;line-height:1.7;color:var(--muted);max-width:50ch;} .on-navy .lead{color:var(--on-navy-soft);}
+    .sec-head{margin-bottom:clamp(36px,5vw,60px);max-width:60ch;} .sec-head .h2{margin-top:12px;}
+    @media (prefers-reduced-motion:no-preference){.js .rv{opacity:0;transform:translateY(16px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease);}.js .rv.in{opacity:1;transform:none;}.js .rv.d1{transition-delay:0.1s;}}
+
+    /* COURTS */
+    .courts-gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:14px;margin-bottom:clamp(32px,4vw,52px);}
+    .photo{position:relative;border-radius:var(--r);overflow:hidden;background:var(--navy) center/cover no-repeat;min-height:320px;}
+    .photo .tag{position:absolute;left:16px;bottom:16px;background:var(--sun);color:var(--navy);font-family:var(--f-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:7px 13px;border-radius:100px;font-weight:500;}
+    .courts-gallery .photo:nth-child(1){grid-row:1 / 3;min-height:420px;background-image:url('img/court-aloha.jpg');}
+    .courts-gallery .photo:nth-child(2){min-height:200px;background-image:url('img/play-action.webp');}
+    .courts-gallery .photo:nth-child(3){min-height:200px;background-image:url('img/court-hyatt.jpg');}
+    .specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line-navy);border:1px solid var(--line-navy);border-radius:var(--r);overflow:hidden;}
+    .spec{background:var(--navy);padding:24px 22px;}
+    .spec .k{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:8px;}
+    .spec .v{font-family:var(--f-disp);font-weight:800;font-size:1.05rem;color:#fff;text-transform:uppercase;letter-spacing:-0.01em;}
+    .spec p{font-size:0.85rem;color:var(--on-navy-soft);line-height:1.5;margin-top:6px;}
+
+    /* PRICING */
+    .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+    .price-card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--court);border-radius:var(--r);padding:30px 30px 26px;display:flex;flex-direction:column;transition:transform 0.2s var(--ease),box-shadow 0.2s;}
+    .price-card.feat{border-top-color:var(--sun);}
+    .price-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(23,58,108,0.12);}
+    .price-card h3{font-family:var(--f-disp);font-weight:900;font-size:1.55rem;color:var(--navy);text-transform:uppercase;letter-spacing:-0.015em;}
+    .price-card .desc{font-size:0.98rem;color:var(--muted);line-height:1.55;margin:8px 0 18px;flex-grow:1;}
+    .price-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+    .pill{font-family:var(--f-mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);background:var(--mist);border:1px solid var(--line);border-radius:100px;padding:6px 12px;}
+    .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:18px;border-top:1px solid var(--line);}
+    .price-row .amt{font-family:var(--f-disp);font-weight:900;font-size:2.1rem;color:var(--navy);}
+    .price-row .btn{min-height:44px;padding:11px 22px;}
+    .price-note{text-align:center;font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:22px;}
+
+    /* RULES */
+    .rules-card{margin-top:30px;background:var(--navy);border-radius:var(--r);padding:clamp(26px,3.5vw,42px);display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(24px,4vw,52px);align-items:center;}
+    .rules-card .eyebrow{color:var(--sun);}
+    .rules-card h3{font-family:var(--f-disp);font-weight:900;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#fff;text-transform:uppercase;letter-spacing:-0.015em;margin:8px 0 14px;line-height:0.98;}
+    .rules-card .aloha{font-family:var(--f-disp);font-weight:800;font-size:0.95rem;text-transform:uppercase;letter-spacing:0.03em;color:var(--sun);}
+    .rules-list{list-style:none;display:grid;gap:14px;}
+    .rules-list li{display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;color:var(--on-navy);font-size:1.02rem;line-height:1.4;}
+    .rules-list svg{width:22px;height:22px;color:var(--court);margin-top:1px;flex-shrink:0;}
+
+    /* CTA */
+    .cta{background:var(--navy-2);text-align:center;padding:clamp(56px,8vw,104px) clamp(18px,4vw,40px);}
+    .cta .page-eyebrow{justify-content:center;}
+    .cta h2{font-family:var(--f-disp);font-weight:900;font-size:clamp(2rem,5vw,3.6rem);line-height:0.98;letter-spacing:-0.02em;text-transform:uppercase;color:#fff;margin:6px auto 18px;max-width:18ch;}
+    .cta p{color:var(--on-navy-soft);font-size:1.1rem;line-height:1.6;max-width:46ch;margin:0 auto 30px;}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;}
+
+    /* FOOTER */
+    footer{background:var(--navy-2);padding:clamp(44px,6vw,68px) clamp(18px,4vw,40px) 30px;border-top:1px solid var(--line-navy);}
+    .foot-top{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:38px;padding-bottom:36px;margin-bottom:22px;border-bottom:1px solid var(--line-navy);}
+    .foot-name{font-family:var(--f-disp);font-weight:900;font-size:21px;color:#fff;text-transform:uppercase;margin-bottom:5px;}
+    .foot-tag{font-family:var(--f-mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sun);margin-bottom:18px;}
+    .foot-soc{display:flex;gap:10px;}
+    .foot-soc a{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;color:var(--on-navy-soft);text-decoration:none;transition:background 0.2s,color 0.2s;}
+    .foot-soc a:hover{background:var(--sun);color:var(--navy);}
+    .foot-col h2{font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-navy-dim);margin-bottom:15px;}
+    .foot-col ul{list-style:none;display:grid;gap:2px;}
+    .foot-col a{display:inline-flex;align-items:center;min-height:36px;font-size:14px;color:var(--on-navy-soft);text-decoration:none;transition:color 0.15s;}
+    .foot-col a:hover{color:#fff;}
+    .foot-bot{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .foot-bot span{font-size:12.5px;color:var(--on-navy-dim);}
+    .foot-bot a{color:var(--sun);text-decoration:none;opacity:0.8;}.foot-bot a:hover{opacity:1;}
+
+    @media (max-width:920px){
+      .nav-links{display:none;}.burger{display:flex;}
+      .courts-gallery{grid-template-columns:1fr 1fr;}
+      .courts-gallery .photo:nth-child(1){grid-row:auto;grid-column:1 / 3;min-height:280px;}
+      .specs{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .price-grid{grid-template-columns:1fr;}
+      .rules-card{grid-template-columns:1fr;gap:22px;}
+      .foot-top{grid-template-columns:1fr 1fr;gap:28px;}
+    }
+    @media (max-width:540px){
+      body{font-size:16px;}
+      .page-actions{flex-direction:column;align-items:stretch;}.page-actions .btn{width:100%;justify-content:center;}.page-actions .hstat{justify-content:center;}
+      .courts-gallery{grid-template-columns:1fr;}
+      .courts-gallery .photo:nth-child(1){grid-column:auto;}
+      .specs{grid-template-columns:1fr;}
+      .cta-actions{flex-direction:column;}.cta-actions .btn{width:100%;justify-content:center;}
+      .foot-top{grid-template-columns:1fr;gap:24px;}.foot-bot{flex-direction:column;}
+    }
+  </style>
+  <script>document.documentElement.className += ' js';</script>
+</head>
+<body>
+
+<a href="#main" class="skip-nav">Skip to main content</a>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <div class="nav-in">
+      <a href="index.html" class="brand" aria-label="OHANA Pickleball Club — home">
+        <img class="brand-logo" src="img/logo.png" width="457" height="217" alt="OHANA Pickleball Club — Maui">
+      </a>
+      <ul class="nav-links">
+        <li><a href="play.html#courts">Courts</a></li>
+        <li><a href="play.html" class="active" aria-current="page">Play &amp; Train</a></li>
+        <li><a href="index.html#membership">Membership</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="index.html#visit">Visit</a></li>
+        <li><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="nav-cta">Book a Court</a></li>
+      </ul>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+    </div>
+    <div class="drawer" id="drawer">
+      <ul>
+        <li><a href="play.html#courts">Courts</a></li>
+        <li><a href="play.html" aria-current="page">Play &amp; Train</a></li>
+        <li><a href="index.html#membership">Membership</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="index.html#visit">Visit</a></li>
+        <li><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="dr-cta">Book a Court</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HEADER -->
+<section class="page-head" aria-labelledby="play-h1">
+  <div class="page-head-in">
+    <a href="index.html" class="back-link">← Back to home</a>
+    <span class="page-eyebrow">Play &amp; Train</span>
+    <h1 id="play-h1">Book your court</h1>
+    <p>Reserve a court for your crew, learn to play, or train with a coach — one-hour sessions, all skill levels welcome. Drop-ins always welcome during open hours.</p>
+    <div class="page-actions">
+      <a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-sun">Book a Court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+      <span class="hstat" data-hours-status hidden><span class="hstat-dot"></span><span class="hstat-txt"></span></span>
+    </div>
+  </div>
+</section>
+
+<!-- COURTS -->
+<section class="sec on-navy" id="courts" aria-labelledby="courts-h2">
+  <div class="wrap">
+    <div class="sec-head rv on-navy">
+      <span class="eyebrow">The Courts</span>
+      <h2 class="h2" id="courts-h2">Built for serious play</h2>
+    </div>
+    <div class="courts-gallery rv d1">
+      <div class="photo" role="img" aria-label="Covered courts with the PLAY WITH ALOHA and ocean-wave murals"><span class="tag">Play With Aloha</span></div>
+      <div class="photo" role="img" aria-label="Players rallying on an OHANA court under the blue shade canopy"></div>
+      <div class="photo" role="img" aria-label="Blue courts beneath the Hyatt Regency banner"></div>
+    </div>
+    <div class="specs rv d1">
+      <div class="spec"><span class="k">Surface</span><span class="v">Tournament Grade</span><p>Cushioned acrylic with permanent nets — sanctioned-event quality.</p></div>
+      <div class="spec"><span class="k">Cover</span><span class="v">Shaded, all 12</span><p>Full canopy end to end. Play through the midday Maui sun.</p></div>
+      <div class="spec"><span class="k">Lighting</span><span class="v">LED Evenings</span><p>The best sessions happen under the Kaʻanapali stars.</p></div>
+      <div class="spec"><span class="k">Access</span><span class="v">Open to All</span><p>Guests and locals — drop in during open hours, daily from 8am.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RATES & BOOKING -->
+<section class="sec light" id="rates" aria-labelledby="rates-h2">
+  <div class="wrap">
+    <div class="sec-head rv light">
+      <span class="eyebrow">Rates &amp; Booking</span>
+      <h2 class="h2" id="rates-h2">Choose your session</h2>
+      <p class="lead" style="margin-top:14px;">Per-session pricing, booked instantly through Square. One-hour sessions, all skill levels welcome.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card rv">
+        <h3>Court Rental</h3>
+        <p class="desc">Reserve a full court for your group — open play, drills, or run your own session. Paddle and ball rentals at the ProShop.</p>
+        <div class="price-meta"><span class="pill">Up to 6 players</span><span class="pill">1 hour</span></div>
+        <div class="price-row"><div class="amt">$100</div><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-ghost-dark">Book</a></div>
+      </div>
+      <div class="price-card feat rv d1">
+        <h3>Learn to Play</h3>
+        <p class="desc">Never held a paddle? Our coaches will have you rallying — and grinning — by the end of your first session. Equipment provided, zero experience needed.</p>
+        <div class="price-meta"><span class="pill">Up to 4 players</span><span class="pill">1 hour</span><span class="pill">Gear provided</span></div>
+        <div class="price-row"><div class="amt">$150</div><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-sun">Book</a></div>
+      </div>
+      <div class="price-card rv">
+        <h3>Private Coaching</h3>
+        <p class="desc">Top one-on-one (or twos) coaching focused entirely on your game — identify gaps, build strengths, sharpen your third-shot drop.</p>
+        <div class="price-meta"><span class="pill">Up to 2 players</span><span class="pill">1 hour</span></div>
+        <div class="price-row"><div class="amt">$120</div><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-ghost-dark">Book</a></div>
+      </div>
+      <div class="price-card rv d1">
+        <h3>3 &amp; Me Coaching</h3>
+        <p class="desc">Bring a small crew and play with a coach — small-group instruction covering dinking, positioning, stacking and strategy.</p>
+        <div class="price-meta"><span class="pill">Up to 3 players</span><span class="pill">1 hour</span></div>
+        <div class="price-row"><div class="amt">$140</div><a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-ghost-dark">Book</a></div>
+      </div>
+    </div>
+    <p class="price-note">Prices are per session · book instantly through Square. Drop-ins welcome during open hours.</p>
+
+    <div class="rules-card rv">
+      <div>
+        <span class="eyebrow">Drop-In</span>
+        <h3>Open Play Rules</h3>
+        <span class="aloha">Play With Aloha</span>
+      </div>
+      <ul class="rules-list">
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="13.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="14" r="1" fill="currentColor" stroke="none"/></svg>Play at your skill level.</li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="13.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="14" r="1" fill="currentColor" stroke="none"/></svg>2 on, 2 off — winners stay.</li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="13.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="14" r="1" fill="currentColor" stroke="none"/></svg>Winners stay a maximum of 3 games.</li>
+        <li><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><circle cx="8" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="13.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="11" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="14" r="1" fill="currentColor" stroke="none"/></svg>4 on, 4 off if 4 paddles are waiting.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CTA -->
+<section class="cta" aria-labelledby="cta-h2">
+  <span class="page-eyebrow">Play With Aloha</span>
+  <h2 id="cta-h2">Grab a court today</h2>
+  <p>Reserve online in under a minute, or just drop in during open hours at Hyatt Regency Maui.</p>
+  <div class="cta-actions">
+    <a href="https://book.squareup.com/appointments/qevrzewenjbofg/location/LHCZJDG3GD0CP" target="_blank" rel="noopener" class="btn btn-sun">Book a Court <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+    <a href="index.html#visit" class="btn btn-ghost-light">Hours &amp; Directions</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-name">OHANA Pickleball</div>
+      <div class="foot-tag">Play With Aloha · Kaʻanapali, Maui</div>
+      <div class="foot-soc">
+        <a href="https://instagram.com/ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Instagram"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="1" y="1" width="16" height="16" rx="4"/><circle cx="9" cy="9" r="4"/><circle cx="13.2" cy="4.8" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://facebook.com/Ohanapickleballclub" target="_blank" rel="noopener" aria-label="OHANA on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col"><h2>Play</h2><ul><li><a href="play.html#rates">Court Rental</a></li><li><a href="play.html#rates">Learn to Play</a></li><li><a href="play.html#rates">Coaching</a></li><li><a href="index.html#membership">Membership</a></li></ul></div>
+    <div class="foot-col"><h2>Club</h2><ul><li><a href="play.html#courts">The Courts</a></li><li><a href="index.html#events">Private Events</a></li><li><a href="story.html">Our Story</a></li><li><a href="index.html#visit">Visit</a></li></ul></div>
+    <div class="foot-col"><h2>Contact</h2><ul><li><a href="tel:+18086674449">(808) 667-4449</a></li><li><a href="mailto:maui@ohanapbc.com">maui@ohanapbc.com</a></li><li><a href="index.html#visit">Hours</a></li><li><a href="index.html#visit">Directions</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2025 OHANA Pickleball Club – Maui. All rights reserved.</span>
+    <span>Design by <a href="https://frontlinewebdesign.tech" target="_blank" rel="noopener">Frontline Web Design</a></span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var rv = document.querySelectorAll('.rv');
+    if (reduce || !('IntersectionObserver' in window)) { rv.forEach(function(el){el.classList.add('in');}); }
+    else { var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'}); rv.forEach(function(el){io.observe(el);}); }
+
+    var burger=document.querySelector('.burger'), drawer=document.getElementById('drawer');
+    function close(){burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu');drawer.style.display='none';}
+    burger.addEventListener('click',function(){var open=burger.getAttribute('aria-expanded')==='true';burger.setAttribute('aria-expanded',String(!open));burger.setAttribute('aria-label',open?'Open menu':'Close menu');drawer.style.display=open?'none':'block';});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+
+    /* Live "Open now" status — Hawaii time */
+    (function(){
+      var els=document.querySelectorAll('[data-hours-status]'); if(!els.length)return;
+      var H={0:[[480,780]],1:[[480,780],[900,1260]],2:[[480,780],[900,1260]],3:[[480,780],[900,1260]],4:[[480,780],[900,1260]],5:[[480,780],[900,1260]],6:[[480,1260]]};
+      var DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      function fmt(m){var h=Math.floor(m/60),mn=m%60,ap=h>=12?'pm':'am',h12=h%12||12;return h12+(mn?':'+(mn<10?'0':'')+mn:'')+ap;}
+      try{
+        var parts=new Intl.DateTimeFormat('en-US',{timeZone:'Pacific/Honolulu',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+        function part(t){var p=parts.find(function(q){return q.type===t;});return p?p.value:null;}
+        var wd=DAYS.indexOf(part('weekday')), cur=(+part('hour'))*60+(+part('minute'));
+        var ivs=H[wd]||[], open=false, closeAt=null, i;
+        for(i=0;i<ivs.length;i++){if(cur>=ivs[i][0]&&cur<ivs[i][1]){open=true;closeAt=ivs[i][1];break;}}
+        var txt;
+        if(open){txt='Open now · until '+fmt(closeAt);}
+        else{var next=null;for(i=0;i<ivs.length;i++){if(ivs[i][0]>cur){next=ivs[i][0];break;}}
+          if(next!=null){txt='Closed · opens '+fmt(next);}
+          else{var d=wd,g=0;do{d=(d+1)%7;g++;}while((!H[d]||!H[d].length)&&g<8);txt='Closed · opens '+DAYS[d]+' '+fmt(H[d][0][0]);}}
+        els.forEach(function(el){el.classList.toggle('is-open',open);var t=el.querySelector('.hstat-txt');if(t)t.textContent=txt;el.removeAttribute('hidden');});
+      }catch(e){}
+    })();
+  })();
+</script>
+</body>
+</html>
